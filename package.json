@@ -1,0 +1,25 @@
+{
+  "name": "burgton-site",
+  "version": "0.0.1",
+  "description": "A site with information about the burgton-button element and library",
+  "main": "index.html",
+  "scripts": {
+    "start": "es-dev-server --app-index index.html --node-resolve --watch --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boguz/burgton-site.git"
+  },
+  "author": "Boguz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/boguz/burgton-site/issues"
+  },
+  "homepage": "https://github.com/boguz/burgton-site#readme",
+  "dependencies": {
+    "burgton-button": "0.0.5"
+  },
+  "devDependencies": {
+    "es-dev-server": "^1.46.0"
+  }
+}
