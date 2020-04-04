@@ -2,16 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
     <title>burgton-button</title>
 
     <link rel="stylesheet" href="./css/burgton-site.css">
+
+    <script type="module" src="node_modules/burgton-button/index.js"></script>
 </head>
+
 <body>
 
-<h1>test</h1>
+    <div class="topbar">
+        <burgton-button class="topbar__button"></burgton-button>
+        <h1 class="topbar__title">Burgton<span class="topbar__title-span">Button</span></h1>
+        <a href="https://github.com/boguz/burgton-button" class="topbar__link"></a>
+    </div>
+
+    <nav class="sidebar"></nav>
+
+    <main class="content"></main>
 
 </body>
 </html>
