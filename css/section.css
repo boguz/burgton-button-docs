@@ -1,11 +1,13 @@
 .section {
     margin-bottom: 3rem;
+    position: relative;
 }
 
 .section__title {
     font-size: 22px;
     margin-bottom: 1rem;
 }
+
 
 .section__text {
     font-weight: 300;
@@ -14,3 +16,17 @@
     margin-bottom: .5rem;
 }
 
+.section__hash-link {
+    position: absolute;
+    left: -24px;
+    top: -2px;
+    font-size: 26px;
+    font-weight: 600;
+    padding-right: 0.5rem;
+    display: none;
+    transition: opacity var(--animation-speed-normal) ease-in-out;
+}
+
+.section:hover .section__hash-link {
+    display: block;
+}
