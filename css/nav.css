@@ -4,7 +4,6 @@
 
 .nav__item {
     font-size: 18px;
-    color: var(--color-grey-dark);
     font-weight: 600;
     padding: .5rem 0;
 }
@@ -22,12 +21,17 @@
     color: var(--color-grey-light);
 }
 
-.nav__clickable:not(.nav__clickable--active):hover {
+.nav__link, .nav__link {
+    color: var(--color-grey-dark);
+}
+
+
+.nav__link:not(.nav__link--active):hover {
     cursor: pointer;
     color: var(--color-highlight);
     opacity: .5;
 }
 
-.nav__clickable--active {
+.nav__link--active {
     color: var(--color-highlight);
 }

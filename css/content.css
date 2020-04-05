@@ -3,7 +3,7 @@
     left: 0;
     width: 100%;
     min-height: calc(100vh - var(--topbar-height));
-    padding: 2rem;
+    padding: 2rem 2rem 6rem;
     transition: width var(--animation-speed-normal) ease-in-out, left var(--animation-speed-normal) ease-in-out;
     background-color: var(--color-content-bg);
     color: var(--color-grey-dark);
@@ -18,6 +18,6 @@
     .content {
         width: calc(100% - var(--sidebar-width));
         left: var(--sidebar-width);
-        padding: 2rem 4rem;
+        padding: 2rem 4rem 6rem;
     }
 }
