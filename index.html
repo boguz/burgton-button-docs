@@ -4,25 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport"  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
+
     <title>burgton-button</title>
 
     <link rel="stylesheet" href="./css/burgton-site.css">
 
     <script type="module" src="node_modules/burgton-button/index.js"></script>
+    <script src="js/main.js" defer></script>
 </head>
 
 <body>
 
     <div class="topbar">
-        <burgton-button class="topbar__button"></burgton-button>
+        <burgton-button type="default" class="topbar__button" targetSelectors="#contentContainer" targetClasses="nav-active"></burgton-button>
         <h1 class="topbar__title">Burgton<span class="topbar__title-span">Button</span></h1>
         <a href="https://github.com/boguz/burgton-button" class="topbar__link"></a>
     </div>
 
-    <nav class="sidebar"></nav>
+    <div class="container" id="contentContainer">
+        <nav class="sidebar">
+            <ul class="nav__list">
+                <li class="nav__item nav__clickable">Introduction</li>
+                <li class="nav__item nav__clickable nav__clickable--active">Getting Started</li>
+                <li class="nav__item nav__clickable">API</li>
+                <li class="nav_sublist-container">
+                    <ul class="nav__sublist">
+                        <li class="nav__subitem nav__clickable">Button Types</li>
+                        <li class="nav__subitem nav__clickable">Line Colors</li>
+                        <li class="nav__subitem nav__clickable">Animation Duration</li>
+                        <li class="nav__subitem nav__clickable">Animation Delay</li>
+                        <li class="nav__subitem nav__clickable">Border Radius</li>
+                    </ul>
+                </li>
+                <li class="nav__item nav__clickable">Styles</li>
+                <li class="nav__item nav__clickable">Contributing</li>
+            </ul>
+        </nav>
 
-    <main class="content"></main>
+        <main class="content"></main>
+    </div>
+
 
 </body>
 </html>

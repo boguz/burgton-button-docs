@@ -1,0 +1,18 @@
+.sidebar {
+    width: var(--sidebar-width);
+    height: calc(100vh - var(--topbar-height));
+    background-color: var(--color--bg);
+    padding: 2rem;
+    transform: translateX(-100%);
+    transition: transform .3s ease-in-out;
+}
+
+#contentContainer.nav-active .sidebar {
+    transform: translateX(0);
+}
+
+@media screen and (min-width: 1000px) {
+    .sidebar {
+        transform: translateX(0);
+    }
+}

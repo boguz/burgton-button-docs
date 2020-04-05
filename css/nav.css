@@ -1,0 +1,33 @@
+.nav__list {
+    list-style: none;
+}
+
+.nav__item {
+    font-size: 18px;
+    color: var(--color-grey-dark);
+    font-weight: 600;
+    padding: .5rem 0;
+}
+
+.nav__sublist {
+    list-style: none;
+    padding-left: 1rem;
+    margin-bottom: .5rem;
+}
+
+.nav__subitem {
+    font-size: 16px;
+    font-weight: 400;
+    padding: .5rem 0;
+    color: var(--color-grey-light);
+}
+
+.nav__clickable:not(.nav__clickable--active):hover {
+    cursor: pointer;
+    color: var(--color--highlight);
+    opacity: .5;
+}
+
+.nav__clickable--active {
+    color: var(--color--highlight);
+}
