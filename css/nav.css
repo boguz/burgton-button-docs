@@ -24,10 +24,10 @@
 
 .nav__clickable:not(.nav__clickable--active):hover {
     cursor: pointer;
-    color: var(--color--highlight);
+    color: var(--color-highlight);
     opacity: .5;
 }
 
 .nav__clickable--active {
-    color: var(--color--highlight);
+    color: var(--color-highlight);
 }

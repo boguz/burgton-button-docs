@@ -1,0 +1,16 @@
+.section {
+    margin-bottom: 3rem;
+}
+
+.section__title {
+    font-size: 22px;
+    margin-bottom: 1rem;
+}
+
+.section__text {
+    font-weight: 300;
+    color: var(--color-grey-light);
+    line-height: 1.5;
+    margin-bottom: .5rem;
+}
+
