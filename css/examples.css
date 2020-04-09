@@ -1,0 +1,29 @@
+.examples {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 8rem);
+    width: 100%;
+    grid-gap: 1rem;
+    justify-content: center;
+}
+
+.examples__card {
+    position: relative;
+    background-color: white;
+    height: 8rem;
+    width: 8rem;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px 0 rgba(150, 150, 150, 0.2);
+}
+
+.examples__title {
+    position: absolute;
+    bottom: .5rem;
+    width: 100%;
+    text-align: center;
+    font-size: .875rem;
+    color: var(--color-grey-light);
+    opacity: .5;
+}
