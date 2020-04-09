@@ -1,16 +1,23 @@
 .sidebar {
     position: fixed;
     left: 0;
-    width: var(--sidebar-width);
+    width: 100vw;
     height: calc(100vh - var(--topbar-height));
     background-color: var(--color-sidebar-bg);
     padding: 2rem;
     transform: translateX(-100%);
     transition: transform var(--animation-speed-normal) ease-in-out;
+    z-index: 2;
 }
 
 #contentContainer.nav-active .sidebar {
     transform: translateX(0);
+}
+
+@media screen and (min-width: 720px) {
+    .sidebar {
+        width: var(--sidebar-width);
+    }
 }
 
 @media screen and (min-width: 1000px) {

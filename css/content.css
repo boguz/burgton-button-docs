@@ -9,9 +9,11 @@
     color: var(--color-grey-dark);
 }
 
-#contentContainer.nav-active .content {
-    width: calc(100% - var(--sidebar-width));
-    left: var(--sidebar-width);
+@media screen and (min-width: 600px) {
+    #contentContainer.nav-active .content {
+        width: calc(100% - var(--sidebar-width));
+        left: var(--sidebar-width);
+    }
 }
 
 @media screen and (min-width: 1000px) {
