@@ -37,11 +37,11 @@
                 <li class="nav__item"><a class="nav__link" href="#sectionAPI">API</a></li>
                 <li class="nav_sublist-container">
                     <ul class="nav__sublist">
-                        <li class="nav__subitem"><a class="nav__link" href="#sectionButtonTypes">Attributes</a></li>
-                        <li class="nav__subitem"><a class="nav__link" href="#sectionLineColors">Styles</a></li>
-                        <li class="nav__subitem"><a class="nav__link" href="#sectionAnimationDuration">Methods</a></li>
-                        <li class="nav__subitem"><a class="nav__link" href="#sectionAnimationDelay">Events</a></li>
-                        <li class="nav__subitem"><a class="nav__link" href="sectionBorderRadius">Accessibility</a></li>
+                        <li class="nav__subitem"><a class="nav__link" href="#apiAttributes">Attributes</a></li>
+                        <li class="nav__subitem"><a class="nav__link" href="#apiStyles">Styles</a></li>
+                        <li class="nav__subitem"><a class="nav__link" href="#apiMethods">Methods</a></li>
+                        <li class="nav__subitem"><a class="nav__link" href="#apiEvents">Events</a></li>
+                        <li class="nav__subitem"><a class="nav__link" href="#apiA11y">Accessibility</a></li>
                     </ul>
                 </li>
                 <li class="nav__item"><a class="nav__link" href="#sectionContributing">Contributing</a></li>
@@ -143,7 +143,7 @@
                 <h2 class="section__title">API</h2>
                 <p class="section__text">Looking for how to customize your <span class="section__text--code">&lt;burgton-button></span>? You came to the right place...</p>
 
-                <h3 class="section__subtitle">Attributes</h3>
+                <h3 id="apiAttributes" class="section__subtitle">Attributes</h3>
 
                 <div class="api__card">
                     <h4 class="api__title">TYPE <span class="api__specs">[attribute, String, optional]</span></h4>
@@ -190,9 +190,9 @@
                         <code>no attribute</code>
                     </p>
                     <p class="api__example-title">Example:</p>
-                    <pre class="api__example"><code class="language-html">&lt;burgton-button label="Menu" labelPosition="right">&lt;/burgton-button></code></pre>
+                    <pre class="api__example"><code class="language-html">&lt;burgton-button label="Menu" labelPosition="top">&lt;/burgton-button></code></pre>
                     <div class="api__button-container">
-                        <burgton-button label="Menu" labelPosition="right"></burgton-button>
+                        <burgton-button label="Menu" labelPosition="top"></burgton-button>
                     </div>
                 </div>
 
@@ -233,11 +233,238 @@
                         <div id="circle-three"></div>
                     </div>
                 </div>
-            </section>
 
-            <section id="sectionStyles" class="section">
-                <a href="#sectionStyles" class="section__hash-link" aria-hidden="true" tabindex="-1">#</a>
-                <h2 class="section__title">Styles</h2>
+                <div class="api__card">
+                    <h4 class="api__title">NO ANIMATION <span class="api__specs">[attribute, optional]</span></h4>
+                    <p class="api__description">The <dfn>noAnimation</dfn> attribute disables the button animation.</p>
+                    <p class="api__example-title">Example:</p>
+                    <pre class="api__example"><code class="language-html">&lt;burgton-button noAnimation>&lt;/burgton-button></code></pre>
+                    <div class="api__button-container">
+                        <burgton-button noAnimation></burgton-button>
+                    </div>
+                </div>
+
+                <div class="api__card">
+                    <h4 class="api__title">DEBUG <span class="api__specs">[attribute, optional]</span></h4>
+                    <p class="api__description">The <dfn>debug</dfn> attribute enables the debug mode.</p>
+                    <p class="api__description">When active, the debug mode will print on the console some information about the <span class="section__text--code">&lt;burgton-button></span>, which may help you find any problems.</p>
+                    <p class="api__example-title">Example:</p>
+                    <pre class="api__example"><code class="language-html">&lt;burgton-button debug>&lt;/burgton-button></code></pre>
+                    <div class="api__button-container">
+                        <burgton-button debug></burgton-button>
+                    </div>
+                </div>
+
+
+
+
+                <h3 id="apiStyles" class="section__subtitle">Styles</h3>
+                <p class="section__text"><span class="section__text--code">&lt;burgton-button></span> exposes several CSS custom properties that you can use to further customize it.</p>
+
+                <div class="api__card">
+                    <h4 class="api__title">LINE COLOR <span class="api__specs">[css custom property, String with css color value, optional]</span></h4>
+                    <p class="api__description">With the <span class="section__text--code">--burgton-button-line-color</span> property you can change the color of the button lines when it is inactive.</p>
+                    <p class="api__possibilities">
+                        <span>Valid values:</span>
+                        <code>CSS color values, like <span class="section__text--code">white</span> or <span class="section__text--code">#FF0000</span></code>
+                        <span>Default value:</span>
+                        <code>#66cc99</code>
+                    </p>
+                    <p class="api__example-title">Example:</p>
+                    <pre class="api__example"><code class="language-css">--burgton-button-line-color: tomato;</code></pre>
+                    <div class="api__button-container">
+                        <burgton-button id="api-css-1"></burgton-button>
+                    </div>
+                </div>
+
+                <div class="api__card">
+                    <h4 class="api__title">LINE COLOR ACTIVE <span class="api__specs">[css custom property, String with css color value, optional]</span></h4>
+                    <p class="api__description">With the <span class="section__text--code">--burgton-button-line-color-active</span> property you can change the color of the button lines when it is active.</p>
+                    <p class="api__possibilities">
+                        <span>Valid values:</span>
+                        <code>CSS color values, like <span class="section__text--code">white</span> or <span class="section__text--code">#FF0000</span></code>
+                        <span>Default value:</span>
+                        <code>#66cc99</code>
+                    </p>
+                    <p class="api__example-title">Example:</p>
+                    <pre class="api__example"><code class="language-css">--burgton-button-line-color-active: purple;</code></pre>
+                    <div class="api__button-container">
+                        <burgton-button id="api-css-2"></burgton-button>
+                    </div>
+                </div>
+
+                <div class="api__card">
+                    <h4 class="api__title">ANIMATION DURATION <span class="api__specs">[css custom property, String with css time value, optional]</span></h4>
+                    <p class="api__description">With the <span class="section__text--code">--burgton-button-animation-duration</span> property you set the animation duration.</p>
+                    <p class="api__possibilities">
+                        <span>Valid values:</span>
+                        <code>CSS time value, like <span class="section__text--code">.5s</span> or <span class="section__text--code">250ms</span></code>
+                        <span>Default value:</span>
+                        <code>500ms</code>
+                    </p>
+                    <p class="api__example-title">Example:</p>
+                    <pre class="api__example"><code class="language-css">--burgton-button-animation-duration: 1s;</code></pre>
+                    <div class="api__button-container">
+                        <burgton-button id="api-css-3"></burgton-button>
+                    </div>
+                </div>
+
+                <div class="api__card">
+                    <h4 class="api__title">ANIMATION DELAY <span class="api__specs">[css custom property, String with css time value, optional]</span></h4>
+                    <p class="api__description">With the <span class="section__text--code">--burgton-button-animation-delay</span> property you set a delay before the animation starts.</p>
+                    <p class="api__possibilities">
+                        <span>Valid values:</span>
+                        <code>CSS time value, like <span class="section__text--code">150ms</span> or <span class="section__text--code">.5s</span></code>
+                        <span>Default value:</span>
+                        <code>0s</code>
+                    </p>
+                    <p class="api__example-title">Example:</p>
+                    <pre class="api__example"><code class="language-css">--burgton-button-animation-delay: 1s;</code></pre>
+                    <div class="api__button-container">
+                        <burgton-button id="api-css-4"></burgton-button>
+                    </div>
+                </div>
+
+                <div class="api__card">
+                    <h4 class="api__title">EASING <span class="api__specs">[css custom property, String with css easing value, optional]</span></h4>
+                    <p class="api__description">With the <span class="section__text--code">--burgton-button-easing</span> property you set the easing function for thr button animation.</p>
+                    <p class="api__possibilities">
+                        <span>Valid values:</span>
+                        <code>CSS easing value, like <span class="section__text--code">ease-in</span> or <span class="section__text--code">cubic-bezier(0, 0, 1, 1)</span></code>
+                        <span>Default value:</span>
+                        <code>ease-in-out</code>
+                    </p>
+                    <p class="api__example-title">Example:</p>
+                    <pre class="api__example"><code class="language-css">--burgton-button-easing: linear;</code></pre>
+                    <div class="api__button-container">
+                        <burgton-button id="api-css-5"></burgton-button>
+                    </div>
+                </div>
+
+                <div class="api__card">
+                    <h4 class="api__title">SCALE <span class="api__specs">[css custom property, Number, optional]</span></h4>
+                    <p class="api__description">With the <span class="section__text--code">--burgton-button-scale</span> you can scale the button up or down.</p>
+                    <p class="api__possibilities">
+                        <span>Valid values:</span>
+                        <code>Number, like <span class="section__text--code">.75</span> or <span class="section__text--code">1.3</span></code>
+                        <span>Default value:</span>
+                        <code>1</code>
+                    </p>
+                    <p class="api__example-title">Example:</p>
+                    <pre class="api__example"><code class="language-css">--burgton-button-scale: 1.5;</code></pre>
+                    <div class="api__button-container">
+                        <burgton-button id="api-css-6"></burgton-button>
+                    </div>
+                </div>
+
+                <div class="api__card">
+                    <h4 class="api__title">BORDER RADIUS <span class="api__specs">[css custom property, String, optional]</span></h4>
+                    <p class="api__description">With the <span class="section__text--code">--burgton-button-border-radius</span> property you can make the line corners rounder.</p>
+                    <p class="api__possibilities">
+                        <span>Valid values:</span>
+                        <code>CSS border radius value, like <span class="section__text--code">2px</span></code>
+                        <span>Default value:</span>
+                        <code>0px</code>
+                    </p>
+                    <p class="api__example-title">Example:</p>
+                    <pre class="api__example"><code class="language-css">--burgton-button-border-radius: 2px;</code></pre>
+                    <div class="api__button-container">
+                        <burgton-button id="api-css-7"></burgton-button>
+                    </div>
+                </div>
+
+                <div class="api__card">
+                    <h4 class="api__title">LABEL FONT SIZE <span class="api__specs">[css custom property, String, optional]</span></h4>
+                    <p class="api__description">With the <span class="section__text--code">--burgton-button-label-font-size</span> property you can set the font size for the button label.</p>
+                    <p class="api__possibilities">
+                        <span>Valid values:</span>
+                        <code>CSS font size value, like <span class="section__text--code">14px</span> or <span class="section__text--code">1.25rem</span></code>
+                        <span>Default value:</span>
+                        <code>14px</code>
+                    </p>
+                    <p class="api__example-title">Example:</p>
+                    <pre class="api__example"><code class="language-css">--burgton-button-label-font-size: 10px;</code></pre>
+                    <div class="api__button-container">
+                        <burgton-button id="api-css-8" label="Menu" labelPosition="bottom"></burgton-button>
+                    </div>
+                </div>
+
+                <div class="api__card">
+                    <h4 class="api__title">LABEL FONT COLOR <span class="api__specs">[css custom property, String, optional]</span></h4>
+                    <p class="api__description">With the <span class="section__text--code">--burgton-button-label-font-color</span> property you can set the color for the button label.</p>
+                    <p class="api__possibilities">
+                        <span>Valid values:</span>
+                        <code>CSS color value, like <span class="section__text--code">white</span> or <span class="section__text--code">#FF0000</span></code>
+                        <span>Default value:</span>
+                        <code>#999999</code>
+                    </p>
+                    <p class="api__example-title">Example:</p>
+                    <pre class="api__example"><code class="language-css">--burgton-button-label-font-color: tomato;</code></pre>
+                    <div class="api__button-container">
+                        <burgton-button id="api-css-9" label="Menu" labelPosition="bottom"></burgton-button>
+                    </div>
+                </div>
+
+                <div class="api__card">
+                    <h4 class="api__title">LABEL FONT COLOR ACTIVE<span class="api__specs">[css custom property, String, optional]</span></h4>
+                    <p class="api__description">With the <span class="section__text--code">--burgton-button-label-font-color-active</span> property you can set the color for the button label when active.</p>
+                    <p class="api__possibilities">
+                        <span>Valid values:</span>
+                        <code>CSS color value, like <span class="section__text--code">white</span> or <span class="section__text--code">#FF0000</span></code>
+                        <span>Default value:</span>
+                        <code>#999999</code>
+                    </p>
+                    <p class="api__example-title">Example:</p>
+                    <pre class="api__example"><code class="language-css">--burgton-button-label-font-color-active: purple;</code></pre>
+                    <div class="api__button-container">
+                        <burgton-button id="api-css-10" label="Menu" labelPosition="bottom"></burgton-button>
+                    </div>
+                </div>
+
+                <div class="api__card">
+                    <h4 class="api__title">LABEL FONT WEIGHT<span class="api__specs">[css custom property, String, optional]</span></h4>
+                    <p class="api__description">With the <span class="section__text--code">--burgton-button-label-font-weight</span> property you can set the font-weight for the button label.</p>
+                    <p class="api__possibilities">
+                        <span>Valid values:</span>
+                        <code>CSS font-weight value, like <span class="section__text--code">100</span></code>
+                        <span>Default value:</span>
+                        <code>inherit</code>
+                    </p>
+                    <p class="api__example-title">Example:</p>
+                    <pre class="api__example"><code class="language-css">--burgton-button-label-font-weight: 600;</code></pre>
+                    <div class="api__button-container">
+                        <burgton-button id="api-css-11" label="Menu" labelPosition="bottom"></burgton-button>
+                    </div>
+                </div>
+
+                <div class="api__card">
+                    <h4 class="api__title">LABEL TEXT TRANSFORM <span class="api__specs">[css custom property, String, optional]</span></h4>
+                    <p class="api__description">With the <span class="section__text--code">--burgton-button-label-text-transform</span> property you can set the text-transform for the button label.</p>
+                    <p class="api__possibilities">
+                        <span>Valid values:</span>
+                        <code>CSS text-transform value, like <span class="section__text--code">lowercase</span></code>
+                        <span>Default value:</span>
+                        <code>uppercase</code>
+                    </p>
+                    <p class="api__example-title">Example:</p>
+                    <pre class="api__example"><code class="language-css">--burgton-button-label-text-transform: capitalize;</code></pre>
+                    <div class="api__button-container">
+                        <burgton-button id="api-css-12" label="Menu" labelPosition="bottom"></burgton-button>
+                    </div>
+                </div>
+
+                <h3 id="apiMethods" class="section__subtitle">Methods</h3>
+                <p class="section__text"><span class="section__text--code">&lt;burgton-button></span> exposes...</p>
+
+
+                <h3 id="apiEvents" class="section__subtitle">Events</h3>
+                <p class="section__text"><span class="section__text--code">&lt;burgton-button></span> exposes...</p>
+
+
+                <h3 id="apiA11y" class="section__subtitle">Accessibility</h3>
+                <p class="section__text"><span class="section__text--code">&lt;burgton-button></span> exposes...</p>
+
+
             </section>
 
             <section id="sectionContributing" class="section">

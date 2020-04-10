@@ -1,5 +1,5 @@
 .api__card {
-    margin-top: 2rem;
+    margin-bottom: 2rem;
     padding-left: 1.5rem;
 }
 
@@ -83,4 +83,52 @@
 
 .circle-two.colorful {
     background-color: rebeccapurple;
+}
+
+#api-css-1 {
+    --burgton-button-line-color: tomato;
+}
+
+#api-css-2 {
+    --burgton-button-line-color-active: purple;
+}
+
+#api-css-3 {
+    --burgton-button-animation-duration: 1s;
+}
+
+#api-css-4 {
+    --burgton-button-animation-delay: 1s;
+}
+
+#api-css-5 {
+    --burgton-button-easing: linear;
+}
+
+#api-css-6 {
+    --burgton-button-scale: 1.5;
+}
+
+#api-css-7 {
+    --burgton-button-border-radius: 2px;
+}
+
+#api-css-8 {
+    --burgton-button-label-font-size: 10px;
+}
+
+#api-css-9 {
+    --burgton-button-label-font-color: tomato;
+}
+
+#api-css-10 {
+    --burgton-button-label-font-color-active: purple;
+}
+
+#api-css-11 {
+    --burgton-button-label-font-weight: 600;
+}
+
+#api-css-12 {
+    --burgton-button-label-text-transform: capitalize;
 }
