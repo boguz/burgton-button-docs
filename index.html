@@ -37,14 +37,13 @@
                 <li class="nav__item"><a class="nav__link" href="#sectionAPI">API</a></li>
                 <li class="nav_sublist-container">
                     <ul class="nav__sublist">
-                        <li class="nav__subitem"><a class="nav__link" href="#sectionButtonTypes">Button Types</a></li>
-                        <li class="nav__subitem"><a class="nav__link" href="#sectionLineColors">Line Colors</a></li>
-                        <li class="nav__subitem"><a class="nav__link" href="#sectionAnimationDuration">Animation Duration</a></li>
-                        <li class="nav__subitem"><a class="nav__link" href="#sectionAnimationDelay">Animation Delay</a></li>
-                        <li class="nav__subitem"><a class="nav__link" href="sectionBorderRadius">Border Radius</a></li>
+                        <li class="nav__subitem"><a class="nav__link" href="#sectionButtonTypes">Attributes</a></li>
+                        <li class="nav__subitem"><a class="nav__link" href="#sectionLineColors">Styles</a></li>
+                        <li class="nav__subitem"><a class="nav__link" href="#sectionAnimationDuration">Methods</a></li>
+                        <li class="nav__subitem"><a class="nav__link" href="#sectionAnimationDelay">Events</a></li>
+                        <li class="nav__subitem"><a class="nav__link" href="sectionBorderRadius">Accessibility</a></li>
                     </ul>
                 </li>
-                <li class="nav__item"><a class="nav__link" href="#sectionStyles">Styles</a></li>
                 <li class="nav__item"><a class="nav__link" href="#sectionContributing">Contributing</a></li>
             </ul>
         </nav>
@@ -53,7 +52,7 @@
             <section id="sectionIntroduction" class="section">
                 <a href="#sectionIntroduction" class="section__hash-link" aria-hidden="true" tabindex="-1">#</a>
                 <h2 class="section__title">Introduction</h2>
-                <p class="section__text">Burgton-button is a small customisable lit-element burger menu that you can use in your projects.</p>
+                <p class="section__text"><span class="section__text--code">&lt;burgton-button></span> is a small customisable lit-element burger menu that you can use in your projects.</p>
                 <p class="section__text">Amongst other features, it allows you to choose from different animations, customise colours, animation
                     speed and event toggle classes on multiple targets on the page.</p>
             </section>
@@ -61,18 +60,19 @@
             <section id="sectionGettingStarted" class="section">
                 <a href="#sectionGettingStarted" class="section__hash-link" aria-hidden="true" tabindex="-1">#</a>
                 <h2 class="section__title">Getting started</h2>
-                <p class="section__text">You can use the Burton-button on your project in 3 simple steps:</p>
-                <p class="section__text">1. Install the Burton-button on your project via NPM (or download it <a href="https://github.com/boguz/burgton-button" target="_blank">here</a>)</p>
+                <p class="section__text">You can use the <span class="section__text--code">&lt;burgton-button></span> element on your project in 3 simple steps:</p>
+                <p class="section__text">1. Install the <span class="section__text--code">&lt;burgton-button></span> on your project via NPM (or download it <a href="https://github.com/boguz/burgton-button" target="_blank">here</a>)</p>
                 <pre class="code__example"><code class="language-shell-session">npm install burgton-button</code></pre>
-                <p class="section__text">2. Import the burgeon-button module on your project</p>
+                <p class="section__text">2. Import the <span class="section__text--code">&lt;burgton-button></span> module on your project</p>
                 <pre class="code__example"><code class="language-html">&lt;script type="module" src="node_modules/burgton-button/index.js">&lt;/script></code></pre>
-                <p class="section__text">3. Add the burgeon-button element to you page with any property you need</p>
+                <p class="section__text">3. Add the <span class="section__text--code">&lt;burgton-button></span> element to you page and customize to your taste</p>
                 <pre class="code__example"><code class="language-html">&lt;burgton-button type="astronaut">&lt;/burgton-button></code></pre>
             </section>
 
             <section id="sectionExamples" class="section">
                 <a href="#sectionExamples" class="section__hash-link" aria-hidden="true" tabindex="-1">#</a>
                 <h2 class="section__title">Examples</h2>
+                <p class="section__text">On the <a href="#sectionAPI">API Section</a> you can see how to customize you button, but here are some examples so you can see all the possible button types.</p>
 
                 <div class="examples">
                     <div class="examples__card">
@@ -89,7 +89,7 @@
                     </div>
                     <div class="examples__card">
                         <burgton-button type="arrow-to-arrow"></burgton-button>
-                        <span class="examples__title">Arrow to arrowt</span>
+                        <span class="examples__title">Arrow to arrow</span>
                     </div>
                     <div class="examples__card">
                         <burgton-button type="astronaut"></burgton-button>
@@ -141,6 +141,98 @@
             <section id="sectionAPI" class="section">
                 <a href="#sectionAPI" class="section__hash-link" aria-hidden="true" tabindex="-1">#</a>
                 <h2 class="section__title">API</h2>
+                <p class="section__text">Looking for how to customize your <span class="section__text--code">&lt;burgton-button></span>? You came to the right place...</p>
+
+                <h3 class="section__subtitle">Attributes</h3>
+
+                <div class="api__card">
+                    <h4 class="api__title">TYPE <span class="api__specs">[attribute, String, optional]</span></h4>
+                    <p class="api__description">The <dfn>type</dfn> attribute defines the button animation.</p>
+                    <p class="api__possibilities">
+                        <span>Valid values:</span>
+                        <code>default, arrow-left, arrow-right, arrow-to-arrow, astronaut, async, crossed, ellipsis, fall-down, minus, rotator, spin, underlined, vertical-rotator, zoom</code>
+                        <span>Default value:</span>
+                        <code>default</code>
+                     </p>
+                    <p class="api__example-title">Example:</p>
+                    <pre class="api__example"><code class="language-html">&lt;burgton-button type="astronaut">&lt;/burgton-button></code></pre>
+                    <div class="api__button-container">
+                        <burgton-button type="astronaut"></burgton-button>
+                    </div>
+                </div>
+
+                <div class="api__card">
+                    <h4 class="api__title">LABEL <span class="api__specs">[attribute, String, optional]</span></h4>
+                    <p class="api__description">The <dfn>label</dfn> attribute defines the text that will be show with the button.</p>
+                    <p class="api__description">If you don't add a <dfn>label</dfn> attribute to the element, no label will be shown.</p>
+                    <p class="api__description">To position the label you can use the <dfn>labelPosition</dfn> attribute.</p>
+                    <p class="api__possibilities">
+                        <span>Valid values:</span>
+                        <code>Any String</code>
+                        <span>Default value:</span>
+                        <code>no attribute</code>
+                    </p>
+                    <p class="api__example-title">Example:</p>
+                    <pre class="api__example"><code class="language-html">&lt;burgton-button label="Open" labelPosition="bottom">&lt;/burgton-button></code></pre>
+                    <div class="api__button-container">
+                        <burgton-button label="Open" labelPosition="bottom"></burgton-button>
+                    </div>
+                </div>
+
+                <div class="api__card">
+                    <h4 class="api__title">LABEL POSITION <span class="api__specs">[attribute, String, optional]</span></h4>
+                    <p class="api__description">The <dfn>labelPosition</dfn> attribute defines the position of the label text in relation to the button.</p>
+                    <p class="api__description">If you don't add a <dfn>label</dfn> attribute to the element, no label will be shown.</p>
+                    <p class="api__possibilities">
+                        <span>Valid values:</span>
+                        <code>top, bottom, right, left</code>
+                        <span>Default value:</span>
+                        <code>no attribute</code>
+                    </p>
+                    <p class="api__example-title">Example:</p>
+                    <pre class="api__example"><code class="language-html">&lt;burgton-button label="Menu" labelPosition="right">&lt;/burgton-button></code></pre>
+                    <div class="api__button-container">
+                        <burgton-button label="Menu" labelPosition="right"></burgton-button>
+                    </div>
+                </div>
+
+                <div class="api__card">
+                    <h4 class="api__title">TARGET SELECTORS <span class="api__specs">[attribute, valid CSS Selectors (comma separated), optional]</span></h4>
+                    <p class="api__description">Very often we want to toggle some other element when we click on a button. You can do this yourself, of you can use the <dfn>targetSelector</dfn> and the <dfn>targetClasses</dfn> attributes and let the <code>burgton-button</code> take care of that for you.</p>
+                    <p class="api__description">The <dfn>targetSelectors</dfn> attribute defines on which elements you want to toggle some class.</p>
+                    <p class="api__possibilities">
+                        <span>Valid values:</span>
+                        <code>CSS Selector String</code>
+                        <span>Default value:</span>
+                        <code>no attribute</code>
+                    </p>
+                    <p class="api__example-title">Example:</p>
+                    <pre class="api__example"><code class="language-html">&lt;burgton-button targetSelectors="#circle-one, .circle-two" targetClasses="active, colorful">&lt;/burgton-button></code></pre>
+                    <div class="api__button-container">
+                        <burgton-button targetSelectors="#circle-one, .circle-two" targetClasses="active, colorful"></burgton-button>
+                        <div id="circle-one"></div>
+                        <div class="circle-two"></div>
+                    </div>
+                </div>
+
+                <div class="api__card">
+                    <h4 class="api__title">TARGET CLASSES <span class="api__specs">[attribute, String, optional]</span></h4>
+                    <p class="api__description">The <dfn>targetClasses</dfn> attribute defines the class that should be toggled on the selected element.</p>
+                    <p class="api__description">The <dfn>targetClasses</dfn> is used in combination with the <def>targetSelectors</def> attribute.</p>
+                    <p class="api__description">The number of selectors (in the <dfn>targetSelectors</dfn>) and classes (in the <dfn>targetClasses</dfn>) must match.</p>
+                    <p class="api__possibilities">
+                        <span>Valid values:</span>
+                        <code>String</code>
+                        <span>Default value:</span>
+                        <code>no attribute</code>
+                    </p>
+                    <p class="api__example-title">Example:</p>
+                    <pre class="api__example"><code class="language-html">&lt;burgton-button targetSelectors="#circle-three" targetClasses="active">&lt;/burgton-button></code></pre>
+                    <div class="api__button-container">
+                        <burgton-button targetSelectors="#circle-three" targetClasses="active"></burgton-button>
+                        <div id="circle-three"></div>
+                    </div>
+                </div>
             </section>
 
             <section id="sectionStyles" class="section">

@@ -1,0 +1,86 @@
+.api__card {
+    margin-top: 2rem;
+    padding-left: 1.5rem;
+}
+
+.api__title {
+    color: var(--color-grey-light);
+    font-weight: 400;
+    margin-bottom: 1rem;
+    margin-left: -1.5rem;
+}
+
+.api__description {
+    font-weight: 300;
+    color: var(--color-grey-light);
+    line-height: 1.5;
+    margin-bottom: .5rem;
+}
+
+.api__specs {
+    opacity: .6;
+    font-weight: 300;
+}
+
+.api__possibilities {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: .5rem;
+    font-weight: 300;
+    color: var(--color-grey-light);
+    line-height: 1.4;
+}
+
+.api__example-title {
+    background-color: #e8e8e8;
+    color: var(--color-grey-light);
+    padding: .25rem 1rem;
+    margin-top: 1rem;
+    border-radius: 2px 2px 0 0;
+    font-weight: 300;
+    font-size: .875rem;
+}
+
+.api__example {
+    margin-top: 0 !important;
+    border-radius: 0 0 2px 2px !important;
+}
+
+.api__button-container {
+    position: relative;
+    height: 8rem;
+    width: 8rem;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px 0 rgba(150, 150, 150, 0.2);
+    margin: 1rem auto;
+}
+
+
+#circle-one, .circle-two, #circle-three {
+    height: .75rem;
+    width: .75rem;
+    background-color: #e8e8e8;
+    position: absolute;
+    right: .5rem;
+    border-radius: 50%;
+    transition: background-color var(--animation-speed-normal) ease-out, left var(--animation-speed-normal) ease-out;
+}
+
+#circle-one, #circle-three {
+    top: .5rem;
+}
+
+#circle-one.active, #circle-three.active {
+    background-color: tomato;
+}
+
+.circle-two {
+    top: 1.5rem;
+}
+
+.circle-two.colorful {
+    background-color: rebeccapurple;
+}

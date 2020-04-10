@@ -8,12 +8,25 @@
     margin-bottom: 1rem;
 }
 
+.section__subtitle {
+    margin-top: 2rem;
+    color: var(--color-grey-light);
+    text-transform: uppercase;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid #e8e8e8;
+}
 
 .section__text {
     font-weight: 300;
     color: var(--color-grey-light);
     line-height: 1.5;
     margin-bottom: .5rem;
+}
+
+.section__text--code {
+    font-family: monospace;
+    background-color: #e8e8e8;
+    padding: 0 .25rem;
 }
 
 .section__hash-link {
