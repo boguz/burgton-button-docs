@@ -41,6 +41,16 @@
     font-size: .875rem;
 }
 
+.api__example-language {
+    position: absolute;
+    right: .875rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 12px;
+    opacity: .5;
+    line-height: 16px;
+}
+
 .api__example {
     margin-top: 0 !important;
     border-radius: 0 0 2px 2px !important;
