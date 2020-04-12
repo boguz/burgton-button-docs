@@ -1,5 +1,5 @@
 .section {
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
     position: relative;
 }
 
@@ -12,9 +12,11 @@
     margin-top: 2rem;
     color: var(--color-grey-light);
     text-transform: uppercase;
-    padding-bottom: .5rem;
-    border-bottom: 1px solid var(--color-highlight);
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+}
+
+.section__subtitle:not(:first-of-type) {
+    margin-top: 4rem;
 }
 
 .section__text {
@@ -22,6 +24,10 @@
     color: var(--color-grey-light);
     line-height: 1.5;
     margin-bottom: .5rem;
+}
+
+.section__subsection-description {
+    margin-bottom: 2rem;
 }
 
 .section__text--code {

@@ -2,481 +2,638 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
 
     <title>burgton-button</title>
 
-    <link rel="stylesheet" href="./css/burgton-site.css">
+    <link href="./css/burgton-site.css" rel="stylesheet">
 
     <!-- burgton button -->
-    <script type="module" src="node_modules/burgton-button/index.js"></script>
+    <script src="node_modules/burgton-button/index.js" type="module"></script>
+    <!--    <script type="module" src="./burgton-button/index.js"></script>-->
 
     <!-- prismjs -->
     <script src="node_modules/prismjs/prism.js"></script>
-    <link rel="stylesheet" href="node_modules/prismjs/themes/prism-tomorrow.css">
+    <link href="node_modules/prismjs/themes/prism-tomorrow.css" rel="stylesheet">
 
     <!-- custom js for the burgton-site -->
-    <script src="js/main.js" defer></script>
+    <script defer src="js/main.js"></script>
 </head>
 
 <body>
 
-    <div class="topbar">
-        <burgton-button type="default" class="topbar__button" targetSelectors="#contentContainer" targetClasses="nav-active"></burgton-button>
-        <h1 class="topbar__title">Burgton<span class="topbar__title-span">Button</span></h1>
-        <a href="https://github.com/boguz/burgton-button" target="_blank" class="topbar__link"></a>
-    </div>
+<div class="topbar">
+    <burgton-button class="topbar__button" targetClasses="nav-active" targetSelectors="#contentContainer"
+                    type="default"></burgton-button>
+    <h1 class="topbar__title">Burgton<span class="topbar__title-span">Button</span></h1>
+    <a class="topbar__link" href="https://github.com/boguz/burgton-button" target="_blank"></a>
+</div>
 
-    <div class="container" id="contentContainer">
-        <nav class="sidebar">
-            <ul class="nav__list">
-                <li class="nav__item"><a class="nav__link" href="#sectionIntroduction">Introduction</a></li>
-                <li class="nav__item"><a class="nav__link nav__link--active" href="#sectionGettingStarted">Getting Started</a></li>
-                <li class="nav__item"><a class="nav__link" href="#sectionExamples">Examples</a></li>
-                <li class="nav__item"><a class="nav__link" href="#sectionAPI">API</a></li>
-                <li class="nav_sublist-container">
-                    <ul class="nav__sublist">
-                        <li class="nav__subitem"><a class="nav__link" href="#apiAttributes">Attributes</a></li>
-                        <li class="nav__subitem"><a class="nav__link" href="#apiStyles">Styles</a></li>
-                        <li class="nav__subitem"><a class="nav__link" href="#apiMethods">Methods</a></li>
-                        <li class="nav__subitem"><a class="nav__link" href="#apiEvents">Events</a></li>
-                        <li class="nav__subitem"><a class="nav__link" href="#apiA11y">Accessibility</a></li>
-                    </ul>
-                </li>
-                <li class="nav__item"><a class="nav__link" href="#sectionContributing">Contributing</a></li>
-            </ul>
-        </nav>
+<div class="container" id="contentContainer">
+    <nav class="sidebar">
+        <ul class="nav__list">
+            <li class="nav__item"><a class="nav__link" href="#sectionIntroduction">Introduction</a></li>
+            <li class="nav__item"><a class="nav__link nav__link--active" href="#sectionGettingStarted">Getting
+                Started</a></li>
+            <li class="nav__item"><a class="nav__link" href="#sectionExamples">Examples</a></li>
+            <li class="nav__item"><a class="nav__link" href="#sectionAPI">API</a></li>
+            <li class="nav_sublist-container">
+                <ul class="nav__sublist">
+                    <li class="nav__subitem"><a class="nav__link" href="#apiAttributes">Attributes</a></li>
+                    <li class="nav__subitem"><a class="nav__link" href="#apiStyles">Styles</a></li>
+                    <li class="nav__subitem"><a class="nav__link" href="#apiMethods">Methods</a></li>
+                    <li class="nav__subitem"><a class="nav__link" href="#apiEvents">Events</a></li>
+                </ul>
+            </li>
+            <li class="nav__item"><a class="nav__link" href="#sectionContributing">Contributing</a></li>
+        </ul>
+    </nav>
 
-        <main class="content">
-            <section id="sectionIntroduction" class="section">
-                <a href="#sectionIntroduction" class="section__hash-link" aria-hidden="true" tabindex="-1">#</a>
-                <h2 class="section__title">Introduction</h2>
-                <p class="section__text"><span class="section__text--code">&lt;burgton-button></span> is a small customisable lit-element burger menu that you can use in your projects.</p>
-                <p class="section__text">Amongst other features, it allows you to choose from different animations, customise colours, animation
-                    speed and event toggle classes on multiple targets on the page.</p>
-            </section>
+    <main class="content">
+        <section class="section" id="sectionIntroduction">
+            <a aria-hidden="true" class="section__hash-link" href="#sectionIntroduction" tabindex="-1">#</a>
+            <h2 class="section__title">Introduction</h2>
+            <p class="section__text"><span class="section__text--code">&lt;burgton-button></span> is a small
+                customisable lit-element burger menu that you can use in your projects.</p>
+            <p class="section__text">Amongst other features, it allows you to choose from different animations,
+                customise colours, animation
+                speed and event toggle classes on multiple targets on the page.</p>
+        </section>
 
-            <section id="sectionGettingStarted" class="section">
-                <a href="#sectionGettingStarted" class="section__hash-link" aria-hidden="true" tabindex="-1">#</a>
-                <h2 class="section__title">Getting started</h2>
-                <p class="section__text">You can use the <span class="section__text--code">&lt;burgton-button></span> element on your project in 3 simple steps:</p>
-                <p class="section__text">1. Install the <span class="section__text--code">&lt;burgton-button></span> on your project via NPM (or download it <a href="https://github.com/boguz/burgton-button" target="_blank">here</a>)</p>
-                <pre class="code__example"><code class="language-shell-session">npm install burgton-button</code></pre>
-                <p class="section__text">2. Import the <span class="section__text--code">&lt;burgton-button></span> module on your project</p>
-                <pre class="code__example"><code class="language-html">&lt;script type="module" src="node_modules/burgton-button/index.js">&lt;/script></code></pre>
-                <p class="section__text">3. Add the <span class="section__text--code">&lt;burgton-button></span> element to you page and customize to your taste</p>
-                <pre class="code__example"><code class="language-html">&lt;burgton-button type="astronaut">&lt;/burgton-button></code></pre>
-            </section>
+        <section class="section" id="sectionGettingStarted">
+            <a aria-hidden="true" class="section__hash-link" href="#sectionGettingStarted" tabindex="-1">#</a>
+            <h2 class="section__title">Getting started</h2>
+            <p class="section__text">You can use the <span class="section__text--code">&lt;burgton-button></span>
+                element on your project in 3 simple steps:</p>
+            <p class="section__text">1. Install the <span class="section__text--code">&lt;burgton-button></span> on your
+                project via NPM (or download it <a href="https://github.com/boguz/burgton-button"
+                                                   target="_blank">here</a>)</p>
+            <pre class="code__example"><code class="language-shell-session">npm install burgton-button</code></pre>
+            <p class="section__text">2. Import the <span class="section__text--code">&lt;burgton-button></span> module
+                on your project</p>
+            <pre class="code__example"><code class="language-html">&lt;script type="module" src="node_modules/burgton-button/index.js">&lt;/script></code></pre>
+            <p class="section__text">3. Add the <span class="section__text--code">&lt;burgton-button></span> element to
+                you page and customize to your taste</p>
+            <pre class="code__example"><code class="language-html">&lt;burgton-button type="astronaut">&lt;/burgton-button></code></pre>
+        </section>
 
-            <section id="sectionExamples" class="section">
-                <a href="#sectionExamples" class="section__hash-link" aria-hidden="true" tabindex="-1">#</a>
-                <h2 class="section__title">Examples</h2>
-                <p class="section__text">On the <a href="#sectionAPI">API Section</a> you can see how to customize you button, but here are some examples so you can see all the possible button types.</p>
+        <section class="section" id="sectionExamples">
+            <a aria-hidden="true" class="section__hash-link" href="#sectionExamples" tabindex="-1">#</a>
+            <h2 class="section__title">Examples</h2>
+            <p class="section__text">On the <a href="#sectionAPI">API Section</a> you can see how to customize you
+                button, but here are some examples so you can see all the possible button types.</p>
 
-                <div class="examples">
-                    <div class="examples__card">
-                        <burgton-button></burgton-button>
-                        <span class="examples__title">Default</span>
-                    </div>
-                    <div class="examples__card">
-                        <burgton-button type="arrow-left"></burgton-button>
-                        <span class="examples__title">Arrow Left</span>
-                    </div>
-                    <div class="examples__card">
-                        <burgton-button type="arrow-right"></burgton-button>
-                        <span class="examples__title">Arrow Right</span>
-                    </div>
-                    <div class="examples__card">
-                        <burgton-button type="arrow-to-arrow"></burgton-button>
-                        <span class="examples__title">Arrow to arrow</span>
-                    </div>
-                    <div class="examples__card">
-                        <burgton-button type="astronaut"></burgton-button>
-                        <span class="examples__title">Astronaut</span>
-                    </div>
-                    <div class="examples__card">
-                        <burgton-button type="async"></burgton-button>
-                        <span class="examples__title">Async</span>
-                    </div>
-                    <div class="examples__card">
-                        <burgton-button type="crossed"></burgton-button>
-                        <span class="examples__title">Crossed</span>
-                    </div>
-                    <div class="examples__card">
-                        <burgton-button type="ellipsis"></burgton-button>
-                        <span class="examples__title">Ellipsis</span>
-                    </div>
-                    <div class="examples__card">
-                        <burgton-button type="fall-down"></burgton-button>
-                        <span class="examples__title">Fall down</span>
-                    </div>
-                    <div class="examples__card">
-                        <burgton-button type="minus"></burgton-button>
-                        <span class="examples__title">Minus</span>
-                    </div>
-                    <div class="examples__card">
-                        <burgton-button type="rotator"></burgton-button>
-                        <span class="examples__title">Rotator</span>
-                    </div>
-                    <div class="examples__card">
-                        <burgton-button type="spin"></burgton-button>
-                        <span class="examples__title">Spin</span>
-                    </div>
-                    <div class="examples__card">
-                        <burgton-button type="underlined"></burgton-button>
-                        <span class="examples__title">Underlined</span>
-                    </div>
-                    <div class="examples__card">
-                        <burgton-button type="vertical-rotator"></burgton-button>
-                        <span class="examples__title">Vertical Rotator</span>
-                    </div>
-                    <div class="examples__card">
-                        <burgton-button type="zoom"></burgton-button>
-                        <span class="examples__title">Zoom</span>
-                    </div>
+            <div class="examples">
+                <div class="examples__card">
+                    <burgton-button></burgton-button>
+                    <span class="examples__title">Default</span>
                 </div>
-            </section>
+                <div class="examples__card">
+                    <burgton-button type="arrow-left"></burgton-button>
+                    <span class="examples__title">Arrow Left</span>
+                </div>
+                <div class="examples__card">
+                    <burgton-button type="arrow-right"></burgton-button>
+                    <span class="examples__title">Arrow Right</span>
+                </div>
+                <div class="examples__card">
+                    <burgton-button type="arrow-to-arrow"></burgton-button>
+                    <span class="examples__title">Arrow to arrow</span>
+                </div>
+                <div class="examples__card">
+                    <burgton-button type="astronaut"></burgton-button>
+                    <span class="examples__title">Astronaut</span>
+                </div>
+                <div class="examples__card">
+                    <burgton-button type="async"></burgton-button>
+                    <span class="examples__title">Async</span>
+                </div>
+                <div class="examples__card">
+                    <burgton-button type="crossed"></burgton-button>
+                    <span class="examples__title">Crossed</span>
+                </div>
+                <div class="examples__card">
+                    <burgton-button type="ellipsis"></burgton-button>
+                    <span class="examples__title">Ellipsis</span>
+                </div>
+                <div class="examples__card">
+                    <burgton-button type="fall-down"></burgton-button>
+                    <span class="examples__title">Fall down</span>
+                </div>
+                <div class="examples__card">
+                    <burgton-button type="minus"></burgton-button>
+                    <span class="examples__title">Minus</span>
+                </div>
+                <div class="examples__card">
+                    <burgton-button type="rotator"></burgton-button>
+                    <span class="examples__title">Rotator</span>
+                </div>
+                <div class="examples__card">
+                    <burgton-button type="spin"></burgton-button>
+                    <span class="examples__title">Spin</span>
+                </div>
+                <div class="examples__card">
+                    <burgton-button type="underlined"></burgton-button>
+                    <span class="examples__title">Underlined</span>
+                </div>
+                <div class="examples__card">
+                    <burgton-button type="vertical-rotator"></burgton-button>
+                    <span class="examples__title">Vertical Rotator</span>
+                </div>
+                <div class="examples__card">
+                    <burgton-button type="zoom"></burgton-button>
+                    <span class="examples__title">Zoom</span>
+                </div>
+            </div>
+        </section>
 
-            <section id="sectionAPI" class="section">
-                <a href="#sectionAPI" class="section__hash-link" aria-hidden="true" tabindex="-1">#</a>
-                <h2 class="section__title">API</h2>
-                <p class="section__text">Looking for how to customize your <span class="section__text--code">&lt;burgton-button></span>? You came to the right place...</p>
+        <section class="section" id="sectionAPI">
+            <a aria-hidden="true" class="section__hash-link" href="#sectionAPI" tabindex="-1">#</a>
+            <h2 class="section__title">API</h2>
+            <p class="section__text">Looking for how to customize your <span class="section__text--code">&lt;burgton-button></span>?
+                You came to the right place...</p>
 
-                <h3 id="apiAttributes" class="section__subtitle">Attributes</h3>
+            <h3 class="section__subtitle" id="apiAttributes">Attributes</h3>
 
-                <div class="api__card">
-                    <h4 class="api__title">TYPE <span class="api__specs">[attribute, String, optional]</span></h4>
-                    <p class="api__description">The <dfn>type</dfn> attribute defines the button animation.</p>
-                    <p class="api__possibilities">
-                        <span>Valid values:</span>
-                        <code>default, arrow-left, arrow-right, arrow-to-arrow, astronaut, async, crossed, ellipsis, fall-down, minus, rotator, spin, underlined, vertical-rotator, zoom</code>
-                        <span>Default value:</span>
-                        <code>default</code>
-                     </p>
-                    <p class="api__example-title">Example:<span class="api__example-language">html</span></p>
+            <div class="api__table">
+                <div class="api__table-header">
+                    <p class="api__table-title">Attribute</p>
+                    <p class="api__table-title">Description</p>
+                    <p class="api__table-title">Valid Values</p>
+                    <p class="api__table-title">Default</p>
+                </div>
+                <div class="api__table-content">
+                    <p class="api__table-info api__table-info--type">type</p>
+                    <p class="api__table-info">Defines the button animation</p>
+                    <p class="api__table-info">'default', 'arrow-left', 'arrow-right', 'arrow-to-arrow', 'astronaut',
+                        'async', 'crossed', 'ellipsis', 'fall-down', 'minus', 'rotator', 'spin', 'underlined',
+                        'vertical-rotator', 'zoom'</p>
+                    <p class="api__table-info">'default'</p>
+                </div>
+                <div class="api__table-example">
                     <pre class="api__example"><code class="language-html">&lt;burgton-button type="astronaut">&lt;/burgton-button></code></pre>
-                    <div class="api__button-container">
-                        <burgton-button type="astronaut"></burgton-button>
-                    </div>
+                </div>
+            </div>
+
+
+            <div class="api__table">
+                <div class="api__table-header">
+                    <p class="api__table-title">Attribute</p>
+                    <p class="api__table-title">Description</p>
+                    <p class="api__table-title">Valid Values</p>
+                    <p class="api__table-title">Default</p>
+                </div>
+                <div class="api__table-content">
+                    <p class="api__table-info api__table-info--type">label</p>
+                    <p class="api__table-info">Defines the text that will be show with the button</p>
+                    <p class="api__table-info">String</p>
+                    <p class="api__table-info">-</p>
+                </div>
+                <div class="api__table-example">
+                    <pre class="api__example"><code class="language-html">&lt;burgton-button label="Open">&lt;/burgton-button></code></pre>
                 </div>
 
-                <div class="api__card">
-                    <h4 class="api__title">LABEL <span class="api__specs">[attribute, String, optional]</span></h4>
-                    <p class="api__description">The <dfn>label</dfn> attribute defines the text that will be show with the button.</p>
-                    <p class="api__description">If you don't add a <dfn>label</dfn> attribute to the element, no label will be shown.</p>
-                    <p class="api__description">To position the label you can use the <dfn>labelPosition</dfn> attribute.</p>
-                    <p class="api__possibilities">
-                        <span>Valid values:</span>
-                        <code>Any String</code>
-                        <span>Default value:</span>
-                        <code>no attribute</code>
-                    </p>
-                    <p class="api__example-title">Example:<span class="api__example-language">html</span></p>
-                    <pre class="api__example"><code class="language-html">&lt;burgton-button label="Open" labelPosition="bottom">&lt;/burgton-button></code></pre>
-                    <div class="api__button-container">
-                        <burgton-button label="Open" labelPosition="bottom"></burgton-button>
-                    </div>
-                </div>
+            </div>
 
-                <div class="api__card">
-                    <h4 class="api__title">LABEL POSITION <span class="api__specs">[attribute, String, optional]</span></h4>
-                    <p class="api__description">The <dfn>labelPosition</dfn> attribute defines the position of the label text in relation to the button.</p>
-                    <p class="api__description">If you don't add a <dfn>label</dfn> attribute to the element, no label will be shown.</p>
-                    <p class="api__possibilities">
-                        <span>Valid values:</span>
-                        <code>top, bottom, right, left</code>
-                        <span>Default value:</span>
-                        <code>no attribute</code>
-                    </p>
-                    <p class="api__example-title">Example:<span class="api__example-language">html</span></p>
+
+            <div class="api__table">
+                <div class="api__table-header">
+                    <p class="api__table-title">Attribute</p>
+                    <p class="api__table-title">Description</p>
+                    <p class="api__table-title">Valid Values</p>
+                    <p class="api__table-title">Default</p>
+                </div>
+                <div class="api__table-content">
+                    <p class="api__table-info api__table-info--type">labelPosition</p>
+                    <p class="api__table-info">Defines the position of the label text in relation to the button</p>
+                    <p class="api__table-info">'top', 'bottom', 'right', 'left'</p>
+                    <p class="api__table-info">-</p>
+                </div>
+                <div class="api__table-example">
                     <pre class="api__example"><code class="language-html">&lt;burgton-button label="Menu" labelPosition="top">&lt;/burgton-button></code></pre>
-                    <div class="api__button-container">
-                        <burgton-button label="Menu" labelPosition="top"></burgton-button>
-                    </div>
                 </div>
+            </div>
 
-                <div class="api__card">
-                    <h4 class="api__title">TARGET SELECTORS <span class="api__specs">[attribute, valid CSS Selectors (comma separated), optional]</span></h4>
-                    <p class="api__description">Very often we want to toggle some other element when we click on a button. You can do this yourself, of you can use the <dfn>targetSelector</dfn> and the <dfn>targetClasses</dfn> attributes and let the <code>burgton-button</code> take care of that for you.</p>
-                    <p class="api__description">The <dfn>targetSelectors</dfn> attribute defines on which elements you want to toggle some class.</p>
-                    <p class="api__possibilities">
-                        <span>Valid values:</span>
-                        <code>CSS Selector String</code>
-                        <span>Default value:</span>
-                        <code>no attribute</code>
-                    </p>
-                    <p class="api__example-title">Example:<span class="api__example-language">html</span></p>
+
+            <div class="api__table">
+                <div class="api__table-header">
+                    <p class="api__table-title">Attribute</p>
+                    <p class="api__table-title">Description</p>
+                    <p class="api__table-title">Valid Values</p>
+                    <p class="api__table-title">Default</p>
+                </div>
+                <div class="api__table-content">
+                    <p class="api__table-info api__table-info--type">targetSelectors</p>
+                    <p class="api__table-info">Defines on which elements you want to toggle a class when the button is
+                        clicked. You can select multiple element by separating the selectors with a comma</p>
+                    <p class="api__table-info">CSS Selector</p>
+                    <p class="api__table-info">-</p>
+                </div>
+                <div class="api__table-example">
                     <pre class="api__example"><code class="language-html">&lt;burgton-button targetSelectors="#circle-one, .circle-two" targetClasses="active, colorful">&lt;/burgton-button></code></pre>
-                    <div class="api__button-container">
-                        <burgton-button targetSelectors="#circle-one, .circle-two" targetClasses="active, colorful"></burgton-button>
-                        <div id="circle-one"></div>
-                        <div class="circle-two"></div>
-                    </div>
                 </div>
+            </div>
 
-                <div class="api__card">
-                    <h4 class="api__title">TARGET CLASSES <span class="api__specs">[attribute, String, optional]</span></h4>
-                    <p class="api__description">The <dfn>targetClasses</dfn> attribute defines the class that should be toggled on the selected element.</p>
-                    <p class="api__description">The <dfn>targetClasses</dfn> is used in combination with the <def>targetSelectors</def> attribute.</p>
-                    <p class="api__description">The number of selectors (in the <dfn>targetSelectors</dfn>) and classes (in the <dfn>targetClasses</dfn>) must match.</p>
-                    <p class="api__possibilities">
-                        <span>Valid values:</span>
-                        <code>String</code>
-                        <span>Default value:</span>
-                        <code>no attribute</code>
-                    </p>
-                    <p class="api__example-title">Example:<span class="api__example-language">html</span></p>
+
+            <div class="api__table">
+                <div class="api__table-header">
+                    <p class="api__table-title">Attribute</p>
+                    <p class="api__table-title">Description</p>
+                    <p class="api__table-title">Valid Values</p>
+                    <p class="api__table-title">Default</p>
+                </div>
+                <div class="api__table-content">
+                    <p class="api__table-info api__table-info--type">targetClasses</p>
+                    <p class="api__table-info">Defines the class that will be toggled on the selected element. The
+                        number of classes must match the number of selectors</p>
+                    <p class="api__table-info">CSS Selector</p>
+                    <p class="api__table-info">-</p>
+                </div>
+                <div class="api__table-example">
                     <pre class="api__example"><code class="language-html">&lt;burgton-button targetSelectors="#circle-three" targetClasses="active">&lt;/burgton-button></code></pre>
-                    <div class="api__button-container">
-                        <burgton-button targetSelectors="#circle-three" targetClasses="active"></burgton-button>
-                        <div id="circle-three"></div>
-                    </div>
                 </div>
+            </div>
 
-                <div class="api__card">
-                    <h4 class="api__title">NO ANIMATION <span class="api__specs">[attribute, optional]</span></h4>
-                    <p class="api__description">The <dfn>noAnimation</dfn> attribute disables the button animation, making the transition between inactive and active states immediate.</p>
-                    <p class="api__example-title">Example:<span class="api__example-language">html</span></p>
+
+            <div class="api__table">
+                <div class="api__table-header">
+                    <p class="api__table-title">Attribute</p>
+                    <p class="api__table-title">Description</p>
+                    <p class="api__table-title">Valid Values</p>
+                    <p class="api__table-title">Default</p>
+                </div>
+                <div class="api__table-content">
+                    <p class="api__table-info api__table-info--type">noAnimation</p>
+                    <p class="api__table-info">Disables the button animation, making the transition between inactive and
+                        active states immediate</p>
+                    <p class="api__table-info">-</p>
+                    <p class="api__table-info">-</p>
+                </div>
+                <div class="api__table-example">
                     <pre class="api__example"><code class="language-html">&lt;burgton-button noAnimation>&lt;/burgton-button></code></pre>
-                    <div class="api__button-container">
-                        <burgton-button noAnimation></burgton-button>
-                    </div>
                 </div>
+            </div>
 
-                <div class="api__card">
-                    <h4 class="api__title">DEBUG <span class="api__specs">[attribute, optional]</span></h4>
-                    <p class="api__description">The <dfn>debug</dfn> attribute enables the debug mode.</p>
-                    <p class="api__description">When active, the debug mode will print on the console some information about the <span class="section__text--code">&lt;burgton-button></span> which may help you find any problems.</p>
-                    <p class="api__example-title">Example:<span class="api__example-language">html</span></p>
-                    <pre class="api__example"><code class="language-html">&lt;burgton-button debug>&lt;/burgton-button></code></pre>
-                    <div class="api__button-container">
-                        <burgton-button debug></burgton-button>
-                    </div>
+            <div class="api__table">
+                <div class="api__table-header">
+                    <p class="api__table-title">Attribute</p>
+                    <p class="api__table-title">Description</p>
+                    <p class="api__table-title">Valid Values</p>
+                    <p class="api__table-title">Default</p>
                 </div>
-
-
-
-
-                <h3 id="apiStyles" class="section__subtitle">Styles</h3>
-                <p class="section__text"><span class="section__text--code">&lt;burgton-button></span> exposes several CSS custom properties that you can use to further customize it.</p>
-
-                <div class="api__card">
-                    <h4 class="api__title">LINE COLOR <span class="api__specs">[css custom property, String with css color value, optional]</span></h4>
-                    <p class="api__description">With the <span class="section__text--code">--burgton-button-line-color</span> property you can change the color of the button lines when it is inactive.</p>
-                    <p class="api__possibilities">
-                        <span>Valid values:</span>
-                        <code>CSS color values, like <span class="section__text--code">white</span> or <span class="section__text--code">#FF0000</span></code>
-                        <span>Default value:</span>
-                        <code>#66cc99</code>
-                    </p>
-                    <p class="api__example-title">Example:<span class="api__example-language">css</span></p>
-                    <pre class="api__example"><code class="language-css">--burgton-button-line-color: tomato;</code></pre>
-                    <div class="api__button-container">
-                        <burgton-button id="api-css-1"></burgton-button>
-                    </div>
+                <div class="api__table-content">
+                    <p class="api__table-info api__table-info--type">debug</p>
+                    <p class="api__table-info">Enables the debug mode</p>
+                    <p class="api__table-info">-</p>
+                    <p class="api__table-info">-</p>
                 </div>
-
-                <div class="api__card">
-                    <h4 class="api__title">LINE COLOR ACTIVE <span class="api__specs">[css custom property, String with css color value, optional]</span></h4>
-                    <p class="api__description">With the <span class="section__text--code">--burgton-button-line-color-active</span> property you can change the color of the button lines when it is active.</p>
-                    <p class="api__possibilities">
-                        <span>Valid values:</span>
-                        <code>CSS color values, like <span class="section__text--code">white</span> or <span class="section__text--code">#FF0000</span></code>
-                        <span>Default value:</span>
-                        <code>#66cc99</code>
-                    </p>
-                    <p class="api__example-title">Example:<span class="api__example-language">css</span></p>
-                    <pre class="api__example"><code class="language-css">--burgton-button-line-color-active: purple;</code></pre>
-                    <div class="api__button-container">
-                        <burgton-button id="api-css-2"></burgton-button>
-                    </div>
+                <div class="api__table-example">
+                    <pre class="api__example"><code
+                            class="language-html">&lt;burgton-button debug>&lt;/burgton-button></code></pre>
                 </div>
+            </div>
 
-                <div class="api__card">
-                    <h4 class="api__title">ANIMATION DURATION <span class="api__specs">[css custom property, String with css time value, optional]</span></h4>
-                    <p class="api__description">With the <span class="section__text--code">--burgton-button-animation-duration</span> property you set the animation duration.</p>
-                    <p class="api__possibilities">
-                        <span>Valid values:</span>
-                        <code>CSS time value, like <span class="section__text--code">.5s</span> or <span class="section__text--code">250ms</span></code>
-                        <span>Default value:</span>
-                        <code>500ms</code>
-                    </p>
-                    <p class="api__example-title">Example:<span class="api__example-language">css</span></p>
-                    <pre class="api__example"><code class="language-css">--burgton-button-animation-duration: 1s;</code></pre>
-                    <div class="api__button-container">
-                        <burgton-button id="api-css-3"></burgton-button>
-                    </div>
+
+            <h3 class="section__subtitle" id="apiStyles">Styles</h3>
+            <p class="section__text section__subsection-description"><span class="section__text--code">&lt;burgton-button></span>
+                exposes several CSS custom properties that you can use to further customize it.</p>
+
+            <div class="api__table">
+                <div class="api__table-header">
+                    <p class="api__table-title">Property</p>
+                    <p class="api__table-title">Description</p>
+                    <p class="api__table-title">Valid Values</p>
+                    <p class="api__table-title">Default</p>
                 </div>
-
-                <div class="api__card">
-                    <h4 class="api__title">ANIMATION DELAY <span class="api__specs">[css custom property, String with css time value, optional]</span></h4>
-                    <p class="api__description">With the <span class="section__text--code">--burgton-button-animation-delay</span> property you set a delay before the animation starts.</p>
-                    <p class="api__possibilities">
-                        <span>Valid values:</span>
-                        <code>CSS time value, like <span class="section__text--code">150ms</span> or <span class="section__text--code">.5s</span></code>
-                        <span>Default value:</span>
-                        <code>0s</code>
-                    </p>
-                    <p class="api__example-title">Example:<span class="api__example-language">css</span></p>
-                    <pre class="api__example"><code class="language-css">--burgton-button-animation-delay: 1s;</code></pre>
-                    <div class="api__button-container">
-                        <burgton-button id="api-css-4"></burgton-button>
-                    </div>
+                <div class="api__table-content">
+                    <p class="api__table-info api__table-info--type">--burgton-button-line-color</p>
+                    <p class="api__table-info">Set the color of the button lines when it is inactive</p>
+                    <p class="api__table-info">CSS color value</p>
+                    <p class="api__table-info">#66cc99</p>
                 </div>
-
-                <div class="api__card">
-                    <h4 class="api__title">EASING <span class="api__specs">[css custom property, String with css easing value, optional]</span></h4>
-                    <p class="api__description">With the <span class="section__text--code">--burgton-button-easing</span> property you set the easing function for thr button animation.</p>
-                    <p class="api__possibilities">
-                        <span>Valid values:</span>
-                        <code>CSS easing value, like <span class="section__text--code">ease-in</span> or <span class="section__text--code">cubic-bezier(0, 0, 1, 1)</span></code>
-                        <span>Default value:</span>
-                        <code>ease-in-out</code>
-                    </p>
-                    <p class="api__example-title">Example:<span class="api__example-language">css</span></p>
-                    <pre class="api__example"><code class="language-css">--burgton-button-easing: linear;</code></pre>
-                    <div class="api__button-container">
-                        <burgton-button id="api-css-5"></burgton-button>
-                    </div>
+                <div class="api__table-example">
+                    <pre class="api__example"><code
+                            class="language-css">--burgton-button-line-color: tomato;</code></pre>
                 </div>
+            </div>
 
-                <div class="api__card">
-                    <h4 class="api__title">SCALE <span class="api__specs">[css custom property, Number, optional]</span></h4>
-                    <p class="api__description">With the <span class="section__text--code">--burgton-button-scale</span> you can scale the button up or down.</p>
-                    <p class="api__possibilities">
-                        <span>Valid values:</span>
-                        <code>Number, like <span class="section__text--code">.75</span> or <span class="section__text--code">1.3</span></code>
-                        <span>Default value:</span>
-                        <code>1</code>
-                    </p>
-                    <p class="api__example-title">Example:<span class="api__example-language">css</span></p>
-                    <pre class="api__example"><code class="language-css">--burgton-button-scale: 1.5;</code></pre>
-                    <div class="api__button-container">
-                        <burgton-button id="api-css-6"></burgton-button>
-                    </div>
+            <div class="api__table">
+                <div class="api__table-header">
+                    <p class="api__table-title">Property</p>
+                    <p class="api__table-title">Description</p>
+                    <p class="api__table-title">Valid Values</p>
+                    <p class="api__table-title">Default</p>
                 </div>
-
-                <div class="api__card">
-                    <h4 class="api__title">BORDER RADIUS <span class="api__specs">[css custom property, String, optional]</span></h4>
-                    <p class="api__description">With the <span class="section__text--code">--burgton-button-border-radius</span> property you can make the line corners rounder.</p>
-                    <p class="api__possibilities">
-                        <span>Valid values:</span>
-                        <code>CSS border radius value, like <span class="section__text--code">2px</span></code>
-                        <span>Default value:</span>
-                        <code>0px</code>
-                    </p>
-                    <p class="api__example-title">Example:<span class="api__example-language">css</span></p>
-                    <pre class="api__example"><code class="language-css">--burgton-button-border-radius: 2px;</code></pre>
-                    <div class="api__button-container">
-                        <burgton-button id="api-css-7"></burgton-button>
-                    </div>
+                <div class="api__table-content">
+                    <p class="api__table-info api__table-info--type">--burgton-button-line-color-active</p>
+                    <p class="api__table-info">Set the color of the button lines when it is active</p>
+                    <p class="api__table-info">CSS color value</p>
+                    <p class="api__table-info">#66cc99</p>
                 </div>
-
-                <div class="api__card">
-                    <h4 class="api__title">LABEL FONT SIZE <span class="api__specs">[css custom property, String, optional]</span></h4>
-                    <p class="api__description">With the <span class="section__text--code">--burgton-button-label-font-size</span> property you can set the font size for the button label.</p>
-                    <p class="api__possibilities">
-                        <span>Valid values:</span>
-                        <code>CSS font size value, like <span class="section__text--code">14px</span> or <span class="section__text--code">1.25rem</span></code>
-                        <span>Default value:</span>
-                        <code>14px</code>
-                    </p>
-                    <p class="api__example-title">Example:<span class="api__example-language">css</span></p>
-                    <pre class="api__example"><code class="language-css">--burgton-button-label-font-size: 10px;</code></pre>
-                    <div class="api__button-container">
-                        <burgton-button id="api-css-8" label="Menu" labelPosition="bottom"></burgton-button>
-                    </div>
+                <div class="api__table-example">
+                    <pre class="api__example"><code
+                            class="language-css">--burgton-button-line-color-active: purple;</code></pre>
                 </div>
+            </div>
 
-                <div class="api__card">
-                    <h4 class="api__title">LABEL FONT COLOR <span class="api__specs">[css custom property, String, optional]</span></h4>
-                    <p class="api__description">With the <span class="section__text--code">--burgton-button-label-font-color</span> property you can set the color for the button label.</p>
-                    <p class="api__possibilities">
-                        <span>Valid values:</span>
-                        <code>CSS color value, like <span class="section__text--code">white</span> or <span class="section__text--code">#FF0000</span></code>
-                        <span>Default value:</span>
-                        <code>#999999</code>
-                    </p>
-                    <p class="api__example-title">Example:<span class="api__example-language">css</span></p>
-                    <pre class="api__example"><code class="language-css">--burgton-button-label-font-color: tomato;</code></pre>
-                    <div class="api__button-container">
-                        <burgton-button id="api-css-9" label="Menu" labelPosition="bottom"></burgton-button>
-                    </div>
+            <div class="api__table">
+                <div class="api__table-header">
+                    <p class="api__table-title">Property</p>
+                    <p class="api__table-title">Description</p>
+                    <p class="api__table-title">Valid Values</p>
+                    <p class="api__table-title">Default</p>
                 </div>
+                <div class="api__table-content">
+                    <p class="api__table-info api__table-info--type">--burgton-button-animation-duration</p>
+                    <p class="api__table-info">Set the animation duration</p>
+                    <p class="api__table-info">CSS time value</p>
+                    <p class="api__table-info">500ms</p>
+                </div>
+                <div class="api__table-example">
+                    <pre class="api__example"><code
+                            class="language-css">--burgton-button-animation-duration: .75s;</code></pre>
+                </div>
+            </div>
 
-                <div class="api__card">
-                    <h4 class="api__title">LABEL FONT COLOR ACTIVE<span class="api__specs">[css custom property, String, optional]</span></h4>
-                    <p class="api__description">With the <span class="section__text--code">--burgton-button-label-font-color-active</span> property you can set the color for the button label when active.</p>
-                    <p class="api__possibilities">
-                        <span>Valid values:</span>
-                        <code>CSS color value, like <span class="section__text--code">white</span> or <span class="section__text--code">#FF0000</span></code>
-                        <span>Default value:</span>
-                        <code>#999999</code>
-                    </p>
-                    <p class="api__example-title">Example:<span class="api__example-language">css</span></p>
+            <div class="api__table">
+                <div class="api__table-header">
+                    <p class="api__table-title">Property</p>
+                    <p class="api__table-title">Description</p>
+                    <p class="api__table-title">Valid Values</p>
+                    <p class="api__table-title">Default</p>
+                </div>
+                <div class="api__table-content">
+                    <p class="api__table-info api__table-info--type">--burgton-button-animation-delay</p>
+                    <p class="api__table-info">Set the animation delay</p>
+                    <p class="api__table-info">CSS time value</p>
+                    <p class="api__table-info">0s</p>
+                </div>
+                <div class="api__table-example">
+                    <pre class="api__example"><code class="language-css">--burgton-button-animation-delay: 750ms;</code></pre>
+                </div>
+            </div>
+
+            <div class="api__table">
+                <div class="api__table-header">
+                    <p class="api__table-title">Property</p>
+                    <p class="api__table-title">Description</p>
+                    <p class="api__table-title">Valid Values</p>
+                    <p class="api__table-title">Default</p>
+                </div>
+                <div class="api__table-content">
+                    <p class="api__table-info api__table-info--type">--burgton-button-easing</p>
+                    <p class="api__table-info">Set the animation easing</p>
+                    <p class="api__table-info">CSS easing value</p>
+                    <p class="api__table-info">ease-in-out</p>
+                </div>
+                <div class="api__table-example">
+                    <pre class="api__example"><code class="language-css">--burgton-button-easing: ease-out;</code></pre>
+                </div>
+            </div>
+
+            <div class="api__table">
+                <div class="api__table-header">
+                    <p class="api__table-title">Property</p>
+                    <p class="api__table-title">Description</p>
+                    <p class="api__table-title">Valid Values</p>
+                    <p class="api__table-title">Default</p>
+                </div>
+                <div class="api__table-content">
+                    <p class="api__table-info api__table-info--type">--burgton-button-scale</p>
+                    <p class="api__table-info">Set the button scale (size)</p>
+                    <p class="api__table-info">Number (multiplier)</p>
+                    <p class="api__table-info">1</p>
+                </div>
+                <div class="api__table-example">
+                    <pre class="api__example"><code class="language-css">--burgton-button-scale: 1.3;</code></pre>
+                </div>
+            </div>
+
+            <div class="api__table">
+                <div class="api__table-header">
+                    <p class="api__table-title">Property</p>
+                    <p class="api__table-title">Description</p>
+                    <p class="api__table-title">Valid Values</p>
+                    <p class="api__table-title">Default</p>
+                </div>
+                <div class="api__table-content">
+                    <p class="api__table-info api__table-info--type">--burgton-button-border-radius</p>
+                    <p class="api__table-info">Set the button lines border-radius</p>
+                    <p class="api__table-info">CSS border-radius value</p>
+                    <p class="api__table-info">0px</p>
+                </div>
+                <div class="api__table-example">
+                    <pre class="api__example"><code
+                            class="language-css">--burgton-button-border-radius: 2px;</code></pre>
+                </div>
+            </div>
+
+            <div class="api__table">
+                <div class="api__table-header">
+                    <p class="api__table-title">Property</p>
+                    <p class="api__table-title">Description</p>
+                    <p class="api__table-title">Valid Values</p>
+                    <p class="api__table-title">Default</p>
+                </div>
+                <div class="api__table-content">
+                    <p class="api__table-info api__table-info--type">--burgton-button-label-font-size</p>
+                    <p class="api__table-info">Set the font size for the label text</p>
+                    <p class="api__table-info">CSS font-size value</p>
+                    <p class="api__table-info">14px</p>
+                </div>
+                <div class="api__table-example">
+                    <pre class="api__example"><code class="language-css">--burgton-button-label-font-size: 1rem;</code></pre>
+                </div>
+            </div>
+
+            <div class="api__table">
+                <div class="api__table-header">
+                    <p class="api__table-title">Property</p>
+                    <p class="api__table-title">Description</p>
+                    <p class="api__table-title">Valid Values</p>
+                    <p class="api__table-title">Default</p>
+                </div>
+                <div class="api__table-content">
+                    <p class="api__table-info api__table-info--type">--burgton-button-label-font-color</p>
+                    <p class="api__table-info">Set the font color for the label text</p>
+                    <p class="api__table-info">CSS color value</p>
+                    <p class="api__table-info">#999999</p>
+                </div>
+                <div class="api__table-example">
+                    <pre class="api__example"><code
+                            class="language-css">--burgton-button-label-font-color: white;</code></pre>
+                </div>
+            </div>
+
+            <div class="api__table">
+                <div class="api__table-header">
+                    <p class="api__table-title">Property</p>
+                    <p class="api__table-title">Description</p>
+                    <p class="api__table-title">Valid Values</p>
+                    <p class="api__table-title">Default</p>
+                </div>
+                <div class="api__table-content">
+                    <p class="api__table-info api__table-info--type">--burgton-button-label-font-color-active</p>
+                    <p class="api__table-info">Set the font color for the label text when the button is active</p>
+                    <p class="api__table-info">CSS color value</p>
+                    <p class="api__table-info">#999999</p>
+                </div>
+                <div class="api__table-example">
                     <pre class="api__example"><code class="language-css">--burgton-button-label-font-color-active: purple;</code></pre>
-                    <div class="api__button-container">
-                        <burgton-button id="api-css-10" label="Menu" labelPosition="bottom"></burgton-button>
-                    </div>
                 </div>
+            </div>
 
-                <div class="api__card">
-                    <h4 class="api__title">LABEL FONT WEIGHT<span class="api__specs">[css custom property, String, optional]</span></h4>
-                    <p class="api__description">With the <span class="section__text--code">--burgton-button-label-font-weight</span> property you can set the font-weight for the button label.</p>
-                    <p class="api__possibilities">
-                        <span>Valid values:</span>
-                        <code>CSS font-weight value, like <span class="section__text--code">100</span></code>
-                        <span>Default value:</span>
-                        <code>inherit</code>
-                    </p>
-                    <p class="api__example-title">Example:<span class="api__example-language">css</span></p>
+            <div class="api__table">
+                <div class="api__table-header">
+                    <p class="api__table-title">Property</p>
+                    <p class="api__table-title">Description</p>
+                    <p class="api__table-title">Valid Values</p>
+                    <p class="api__table-title">Default</p>
+                </div>
+                <div class="api__table-content">
+                    <p class="api__table-info api__table-info--type">--burgton-button-label-font-weight</p>
+                    <p class="api__table-info">Set the font weight for the label text when the button is active</p>
+                    <p class="api__table-info">CSS font-weight value</p>
+                    <p class="api__table-info">inherit</p>
+                </div>
+                <div class="api__table-example">
                     <pre class="api__example"><code class="language-css">--burgton-button-label-font-weight: 600;</code></pre>
-                    <div class="api__button-container">
-                        <burgton-button id="api-css-11" label="Menu" labelPosition="bottom"></burgton-button>
-                    </div>
                 </div>
+            </div>
 
-                <div class="api__card">
-                    <h4 class="api__title">LABEL TEXT TRANSFORM <span class="api__specs">[css custom property, String, optional]</span></h4>
-                    <p class="api__description">With the <span class="section__text--code">--burgton-button-label-text-transform</span> property you can set the text-transform for the button label.</p>
-                    <p class="api__possibilities">
-                        <span>Valid values:</span>
-                        <code>CSS text-transform value, like <span class="section__text--code">lowercase</span></code>
-                        <span>Default value:</span>
-                        <code>uppercase</code>
-                    </p>
-                    <p class="api__example-title">Example:<span class="api__example-language">css</span></p>
+            <div class="api__table">
+                <div class="api__table-header">
+                    <p class="api__table-title">Property</p>
+                    <p class="api__table-title">Description</p>
+                    <p class="api__table-title">Valid Values</p>
+                    <p class="api__table-title">Default</p>
+                </div>
+                <div class="api__table-content">
+                    <p class="api__table-info api__table-info--type">--burgton-button-label-text-transform</p>
+                    <p class="api__table-info">Set the text-transform for the label text when the button is active</p>
+                    <p class="api__table-info">CSS text-transform value</p>
+                    <p class="api__table-info">uppercase</p>
+                </div>
+                <div class="api__table-example">
                     <pre class="api__example"><code class="language-css">--burgton-button-label-text-transform: capitalize;</code></pre>
-                    <div class="api__button-container">
-                        <burgton-button id="api-css-12" label="Menu" labelPosition="bottom"></burgton-button>
-                    </div>
                 </div>
-
-                <h3 id="apiMethods" class="section__subtitle">Methods</h3>
-                <p class="section__text"><span class="section__text--code">&lt;burgton-button></span> exposes...</p>
+            </div>
 
 
-                <h3 id="apiEvents" class="section__subtitle">Events</h3>
-                <p class="section__text"><span class="section__text--code">&lt;burgton-button></span> exposes...</p>
+            <h3 class="section__subtitle" id="apiMethods">Methods</h3>
+            <p class="section__text section__subsection-description"><span class="section__text--code">&lt;burgton-button></span>
+                exposes several methods which you can call from you application.</p>
+
+            <div class="api__table">
+                <div class="api__table-header">
+                    <p class="api__table-title">Method</p>
+                    <p class="api__table-title">Description</p>
+                </div>
+                <div class="api__table-content">
+                    <p class="api__table-info api__table-info--type">.toggleState()</p>
+                    <p class="api__table-info">Toggle between the button's active and inactive state</p>
+                </div>
+                <div class="api__table-example">
+                    <pre class="api__example"><code class="language-js">yourButton.toggleState();</code></pre>
+                </div>
+            </div>
+
+            <div class="api__table">
+                <div class="api__table-header">
+                    <p class="api__table-title">Method</p>
+                    <p class="api__table-title">Description</p>
+                </div>
+                <div class="api__table-content">
+                    <p class="api__table-info api__table-info--type">.activate()</p>
+                    <p class="api__table-info">Activate the button</p>
+                </div>
+                <div class="api__table-example">
+                    <pre class="api__example"><code class="language-js">yourButton.activate();</code></pre>
+                </div>
+            </div>
+
+            <div class="api__table">
+                <div class="api__table-header">
+                    <p class="api__table-title">Method</p>
+                    <p class="api__table-title">Description</p>
+                </div>
+                <div class="api__table-content">
+                    <p class="api__table-info api__table-info--type">.deactivate()</p>
+                    <p class="api__table-info">Deactivate the button</p>
+                </div>
+                <div class="api__table-example">
+                    <pre class="api__example"><code class="language-js">yourButton.deactivate();</code></pre>
+                </div>
+            </div>
 
 
-                <h3 id="apiA11y" class="section__subtitle">Accessibility</h3>
-                <p class="section__text"><span class="section__text--code">&lt;burgton-button></span> exposes...</p>
+
+            <h3 class="section__subtitle" id="apiEvents">Events</h3>
+            <p class="section__text"><span class="section__text--code">&lt;burgton-button></span> fires several custom
+                events so you can react to them on you application.</p>
+
+            <div class="api__table">
+                <div class="api__table-header">
+                    <p class="api__table-title">Event</p>
+                    <p class="api__table-title">Description</p>
+                </div>
+                <div class="api__table-content">
+                    <p class="api__table-info api__table-info--type">burgton-button-state-change</p>
+                    <p class="api__table-info">Fires whenever the button's state changes</p>
+                </div>
+            </div>
+
+            <div class="api__table">
+                <div class="api__table-header">
+                    <p class="api__table-title">Event</p>
+                    <p class="api__table-title">Description</p>
+                </div>
+                <div class="api__table-content">
+                    <p class="api__table-info api__table-info--type">burgton-button-click</p>
+                    <p class="api__table-info">Fires whenever the button is clicked</p>
+                </div>
+            </div>
+
+            <div class="api__table">
+                <div class="api__table-header">
+                    <p class="api__table-title">Event</p>
+                    <p class="api__table-title">Description</p>
+                </div>
+                <div class="api__table-content">
+                    <p class="api__table-info api__table-info--type">burgton-button-activate</p>
+                    <p class="api__table-info">Fires whenever the button state becomes active</p>
+                </div>
+            </div>
+
+            <div class="api__table">
+                <div class="api__table-header">
+                    <p class="api__table-title">Event</p>
+                    <p class="api__table-title">Description</p>
+                </div>
+                <div class="api__table-content">
+                    <p class="api__table-info api__table-info--type">burgton-button-deactivate</p>
+                    <p class="api__table-info">Fires whenever the button state becomes inactive</p>
+                </div>
+            </div>
 
 
-            </section>
 
-            <section id="sectionContributing" class="section">
-                <a href="#sectionContributing" class="section__hash-link" aria-hidden="true" tabindex="-1">#</a>
-                <h2 class="section__title">Contributing</h2>
-                <p class="section__text">If you have any ideas, suggestions or questions, you can contact us on our <a href="https://github.com/boguz/burgton-button" target="_blank">Github Page</a>.</p>
-                <p class="section__text">You can also find the burgton-buttons package on <a href="https://www.npmjs.com/package/burgton-button" target="_blank">NPM</a>.</p>
-            </section>
+        </section>
 
-            <div class="author">Made with &#9829; by <a href="https://github.com/boguz" target="_blank">Boguz</a></div>
-        </main>
-    </div>
+        <section class="section" id="sectionContributing">
+            <a aria-hidden="true" class="section__hash-link" href="#sectionContributing" tabindex="-1">#</a>
+            <h2 class="section__title">Contributing</h2>
+            <p class="section__text">If you have any ideas, suggestions or questions, you can contact us on our <a
+                    href="https://github.com/boguz/burgton-button" target="_blank">Github Page</a>.</p>
+            <p class="section__text">You can also find the burgton-buttons package on <a
+                    href="https://www.npmjs.com/package/burgton-button" target="_blank">NPM</a>.</p>
+        </section>
+
+        <div class="author">Made with &#9829; by <a href="https://github.com/boguz" target="_blank">Boguz</a></div>
+    </main>
+</div>
 
 </body>
 </html>
