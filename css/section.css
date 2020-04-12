@@ -12,7 +12,7 @@
     margin-top: 2rem;
     color: var(--color-grey-light);
     text-transform: uppercase;
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
 }
 
 .section__subtitle:not(:first-of-type) {
@@ -45,6 +45,14 @@
     padding-right: 0.5rem;
     display: none;
     transition: opacity var(--animation-speed-normal) ease-in-out;
+}
+
+.section__hash-link--subsection {
+    position: relative;
+    height: 0;
+    top: -2.2rem;
+    color: var(--color-highlight-light);
+    display: inline;
 }
 
 .section:hover .section__hash-link {
