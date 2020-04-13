@@ -4792,10 +4792,12 @@ class BurgtonButton extends LitElement {
           this._targetSelectors = value;
         }
       });
+    } else {
+      this._targetSelectors = null;
     }
 
-    if (this._targetSelectors && this._targetClasses) {
-      if (this._targetSelectors.length !== this._targetClasses.length) {
+    if (this._targetSelectors && this.targetClasses) {
+      if (this._targetSelectors.length !== this.targetClasses.length) {
         this._addError(
           'The number of selectors in the "targetSelectors" property does not match the number of classes in the "targetClasses" attribute.',
           'not matched properties',
@@ -4934,8 +4936,7 @@ class BurgtonButton extends LitElement {
 
     console.groupCollapsed('4. BURGTON BUTTON INFORMATION:');
     console.log('Github: https://github.com/boguz/burgton-button'); // eslint-disable-line no-console
-    // todo: Add link to documentation
-    console.log('Documentation: coming soon...'); // eslint-disable-line no-console
+    console.log('https://boguz.github.io/burgton-button-docs/'); // eslint-disable-line no-console
     console.groupEnd();
 
     console.groupEnd();
@@ -4946,17 +4947,14 @@ class BurgtonButton extends LitElement {
    * Toggle target classes on defined target elements
    */
   _toggleTargetClasses() {
-    const targetSelectors = this.getAttribute('targetSelectors').split(',').map((item) => item.trim());
-    const targetClasses = this.getAttribute('targetClasses').split(',').map((item) => item.trim());
+    if (this._targetSelectors && this._targetClasses) {
+      const targetSelectors = this.getAttribute('targetSelectors').split(',').map((item) => item.trim());
+      const targetClasses = this.getAttribute('targetClasses').split(',').map((item) => item.trim());
 
-    if (!this._targetSelectors || !this._targetClasses) {
-      console.warn('BURGTON BUTTON - Ooops, something went wrong:\n\nCould not toggle the target classes. Check the console or turn on the debug mode for more information.');
-      return;
+      targetSelectors.forEach((targetSelector, index) => {
+        document.querySelector(targetSelector).classList.toggle(targetClasses[index]);
+      });
     }
-
-    targetSelectors.forEach((targetSelector, index) => {
-      document.querySelector(targetSelector).classList.toggle(targetClasses[index]);
-    });
   }
 
   /**
@@ -4995,20 +4993,20 @@ class BurgtonButton extends LitElement {
 
   /**
    * @public
-   * Change state to activate the button
+   * Change state to true to activate the button
    */
-  open() {
+  activate() {
     this.state = true;
-    this._dispatchEvent('burgton-button-open');
+    this._dispatchEvent('burgton-button-activate');
   }
 
   /**
    * @public
-   * Change state to deactivate the button
+   * Change state to false to deactivate the button
    */
-  close() {
+  deactivate() {
     this.state = false;
-    this._dispatchEvent('burgton-button-close');
+    this._dispatchEvent('burgton-button-deactivate');
   }
 }
 
