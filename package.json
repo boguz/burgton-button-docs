@@ -9,7 +9,8 @@
     "copy:html": "cp -f index.html build/",
     "bundle:css": "postcss css/burgton-site.css -o build/css/burgton-site.css",
     "build:js": "rollup -c",
-    "build": "npm run clear:build && npm run copy:html && npm run bundle:css && npm run build:js"
+    "build": "npm run clear:build && npm run copy:html && npm run bundle:css && npm run build:js",
+    "publish": "npm run build && git subtree push --prefix build origin gh-pages"
   },
   "repository": {
     "type": "git",
