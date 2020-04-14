@@ -4681,7 +4681,6 @@ class BurgtonButton extends LitElement {
     return styles;
   }
 
-  // eslint-disable-next-line class-methods-use-this
   render() {
     return html`
       <span class="line line--top"></span>
@@ -4693,15 +4692,12 @@ class BurgtonButton extends LitElement {
 
   static get properties() {
     return {
-      // define which type of button we want to use
       type: { type: String },
       state: { type: Boolean },
       label: { type: String },
       labelPosition: { type: String },
       targetSelectors: { type: String },
       targetClasses: { type: String },
-      debug: { type: Boolean },
-      errors: { type: Array },
     };
   }
 
@@ -4745,14 +4741,11 @@ class BurgtonButton extends LitElement {
   set labelPosition(value) {
     const acceptedPositions = ['top', 'bottom', 'right', 'left'];
     if (value && !acceptedPositions.includes(value)) {
-      this._addError(
-        `The labelPosition '${value}' is not valid. Please choose "top", "bottom", "right" or "left".`,
-        'invalid property',
-        'labelPosition',
-        `${value}`,
-      );
+      this._logError(`"${value}" is not a valid labelPosition value`);
+      this._labelPosition = 'bottom';
+    } else {
+      this._labelPosition = value;
     }
-    this._labelPosition = value;
   }
 
   /**
@@ -4762,50 +4755,8 @@ class BurgtonButton extends LitElement {
     return this._labelPosition;
   }
 
-  /**
-   * Check vor valid values and set value of targetSelectors property
-   */
   set targetSelectors(value) {
-    if (value === '') {
-      this._addError(
-        'Looks like the "targetSelectors" attribute is empty.',
-        'empty property',
-        'targetSelectors',
-        '-',
-      );
-      this._targetSelectors = null;
-      return;
-    }
-
-    if (value.length > 0) {
-      const targetSelectors = this.getAttribute('targetSelectors').split(',').map((item) => item.trim());
-      targetSelectors.forEach((targetSelector) => {
-        if (!document.querySelector(targetSelector)) {
-          this._addError(
-            `Looks like we could not find the ${targetSelector} element you were looking for.`,
-            'invalid selector',
-            'targetSelectors',
-            `${targetSelector}`,
-          );
-          this._targetSelectors = null;
-        } else {
-          this._targetSelectors = value;
-        }
-      });
-    } else {
-      this._targetSelectors = null;
-    }
-
-    if (this._targetSelectors && this.targetClasses) {
-      if (this._targetSelectors.length !== this.targetClasses.length) {
-        this._addError(
-          'The number of selectors in the "targetSelectors" property does not match the number of classes in the "targetClasses" attribute.',
-          'not matched properties',
-          'targetSelectors / targetClasses',
-          `${this._targetSelectors.length} / ${this._targetClasses.length}`,
-        );
-      }
-    }
+    this._targetSelectors = value;
   }
 
   /**
@@ -4819,17 +4770,7 @@ class BurgtonButton extends LitElement {
    * Check if not empty and set value of targetClasses property
    */
   set targetClasses(value) {
-    if (value === '') {
-      this._addError(
-        'Looks like the "targetClasses" attribute is empty.',
-        'empty property',
-        'targetClasses',
-        '-',
-      );
-      this._targetClasses = null;
-    } else {
-      this._targetClasses = value;
-    }
+    this._targetClasses = value;
   }
 
   /**
@@ -4842,12 +4783,10 @@ class BurgtonButton extends LitElement {
   constructor() {
     super();
 
-    this.errors = [];
     this.type = 'default';
     this.state = false;
     this.label = null;
     this.labelPosition = null;
-    this.debug = false;
     this.acceptedTypes = [
       'default',
       'arrow-left',
@@ -4871,21 +4810,13 @@ class BurgtonButton extends LitElement {
     super.connectedCallback();
     this.addEventListener('click', this._handleClick);
 
-    // eslint-disable-next-line no-unused-expressions
-    this.debug && this._logDebug();
-
     this.addEventListener('click', this._toggleTargetClasses);
   }
 
   // eslint-disable-next-line no-unused-vars
   attributeChangedCallback(name, old, value) {
     if (name === 'type' && !this.acceptedTypes.includes(value)) {
-      this._addError(
-        `The type '${value}' in not a valid. Reverting back to 'default'.`,
-        'invalid property',
-        'type',
-        `${value}`,
-      );
+      this._logError(`"${value}" is not a valid type value`);
       this.type = 'default';
     } else {
       super.attributeChangedCallback(name, old, value);
@@ -4896,7 +4827,6 @@ class BurgtonButton extends LitElement {
    * @private
    * Handle click on the burgton-button element
    *    1. toggle state
-   *
    */
   _handleClick() {
     this.toggleState();
@@ -4905,69 +4835,24 @@ class BurgtonButton extends LitElement {
 
   /**
    * @private
-   * Show debug information
-   *    1. Burgton button element
-   *    2. Burgton button properties
-   *    3. Burgton button error
-   */
-  _logDebug() {
-    console.group('%c===== BURGTON BUTTON DEBUGGER INFO =====', 'background-color: coral; color: white; padding: .5rem 1rem; .25rem;');
-
-    console.groupCollapsed('1. BURGTON BUTTON ELEMENT:');
-    console.log(this); // eslint-disable-line no-console
-    console.groupEnd();
-
-    console.groupCollapsed('2. BURGTON BUTTON PROPERTIES:');
-    console.table({
-      type: this.type,
-      label: this.label,
-      labelPosition: this.labelPosition,
-    });
-    console.groupEnd();
-
-    console.groupCollapsed('3. BURGTON BUTTON ERRORS:');
-    if (this.errors.length > 0) {
-      console.log(`%c${this.errors.length} errors found! 💣`, 'color: crimson; font-weight: bold;'); // eslint-disable-line no-console
-      console.table(this.errors);
-    } else {
-      console.log('%cNo errors found! 👍', 'color: seagreen; font-weight: bold;'); // eslint-disable-line no-console
-    }
-    console.groupEnd();
-
-    console.groupCollapsed('4. BURGTON BUTTON INFORMATION:');
-    console.log('Github: https://github.com/boguz/burgton-button'); // eslint-disable-line no-console
-    console.log('https://boguz.github.io/burgton-button-docs/'); // eslint-disable-line no-console
-    console.groupEnd();
-
-    console.groupEnd();
-  }
-
-  /**
-   * @private
    * Toggle target classes on defined target elements
    */
   _toggleTargetClasses() {
     if (this._targetSelectors && this._targetClasses) {
-      const targetSelectors = this.getAttribute('targetSelectors').split(',').map((item) => item.trim());
-      const targetClasses = this.getAttribute('targetClasses').split(',').map((item) => item.trim());
+      const targetsCollection = this.getAttribute('targetSelectors').split(',').map((item) => item.trim());
+      const classesCollection = this.getAttribute('targetClasses').split(',').map((item) => item.trim());
 
-      targetSelectors.forEach((targetSelector, index) => {
-        document.querySelector(targetSelector).classList.toggle(targetClasses[index]);
+      if (targetsCollection.length !== classesCollection.length) {
+        this._logError(`The number of target selectors (${targetsCollection.length}) does not match the number of target classes (${classesCollection.length}), so to prevent errors the selector toggle will be disabled. Make sure the number of targetSelectors and targetClasses match.`);
+        return;
+      }
+      targetsCollection.forEach((targetsElement, index) => {
+        document.querySelector(targetsElement).classList.toggle(classesCollection[index]);
       });
     }
   }
 
   /**
-   * @private
-   * Display warning on the console and add error to the errors array
-   */
-  _addError(errorMessage, errorType, errorProperty, errorValue) {
-    console.warn(`BURGTON BUTTON - Ooops, something went wrong:\n\n${errorMessage}`);
-    this.errors.push([errorType, errorProperty, errorValue]);
-  }
-
-  /**
-   *
    * @param eventName
    * @private
    * Dispatch custom events so other elements can react to them
@@ -4981,6 +4866,17 @@ class BurgtonButton extends LitElement {
       },
     });
     this.dispatchEvent(newEvent);
+  }
+
+  /**
+   * @param error
+   * @private
+   * Print error on the console and show link to documentation
+   */
+  _logError(error) {
+    console.error(`BURGTON BUTTON ERROR: ${error}`);
+    // eslint-disable-next-line no-console
+    console.info('You can find the documentation for the burgton button here: https://boguz.github.io/burgton-button-docs/');
   }
 
   /**
