@@ -12,7 +12,7 @@
 
     <!-- burgton button -->
     <script src="./js/burgton-button-bundle.js" type="module"></script>
-    <!--<script type="module" src="./burgton-button/index.js"></script>-->
+    <!--<script type="module" src="../TEST/index.js"></script>-->
 
     <!-- prismjs -->
     <script src="./js/prismjs-bundle.js" type="module"></script>
@@ -45,6 +45,7 @@
                     <li class="nav__subitem"><a class="nav__link" href="#apiEvents">Events</a></li>
                 </ul>
             </li>
+            <li class="nav__item"><a class="nav__link" href="#sectionA11y">A11y</a></li>
             <li class="nav__item"><a class="nav__link" href="#sectionContributing">Contributing</a></li>
         </ul>
     </nav>
@@ -253,6 +254,26 @@
                 </div>
                 <div class="api__table-example">
                     <pre class="api__example"><code class="language-html">&lt;burgton-button targetSelectors="#circle-three" targetClasses="active">&lt;/burgton-button></code></pre>
+                </div>
+            </div>
+
+
+            <div class="api__table">
+                <div class="api__table-header">
+                    <p class="api__table-title">Attribute</p>
+                    <p class="api__table-title">Description</p>
+                    <p class="api__table-title">Valid Values</p>
+                    <p class="api__table-title">Default</p>
+                </div>
+                <div class="api__table-content">
+                    <p class="api__table-info api__table-info--type">description</p>
+                    <p class="api__table-info">Defines the default text for the 'aria-label' attribute. This value will be
+                        overwritten with the <span class="section__text--code">label</span> Text (if present)</p>
+                    <p class="api__table-info">String</p>
+                    <p class="api__table-info">'Menu button'</p>
+                </div>
+                <div class="api__table-example">
+                    <pre class="api__example"><code class="language-html">&lt;burgton-button description="Menu on/off button">&lt;/burgton-button></code></pre>
                 </div>
             </div>
 
@@ -581,8 +602,13 @@
                 </div>
             </div>
 
+        </section>
 
-
+        <section class="section" id="sectionA11y">
+            <a aria-hidden="true" class="section__hash-link" href="#sectionA11y" tabindex="-1">#</a>
+            <h2 class="section__title">A11y</h2>
+            <p class="section__text">Accessibility is very important, so we try to implement some good practices to reach as many users as possible and provide them a good experience.</p>
+            <p class="section__text">We do this mainly by adding several relevant aria attributes and also by giving you the possibility to change them via attributes.</p>
         </section>
 
         <section class="section" id="sectionContributing">
