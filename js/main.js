@@ -1,5 +1,6 @@
 // Get Elements
 const navElements = document.querySelectorAll('.nav__link');
+const burgton = document.querySelector('.topbar__button');
 
 // handle click on the menu items
 const handleNavClick = (event) => {
@@ -8,6 +9,7 @@ const handleNavClick = (event) => {
   if (!event.target.classList.contains('nav__link--active')) {
     toggleNavClass(event.target)
     scrollToSection(event.target.getAttribute('href'))
+    burgton.deactivate();
   }
 }
 

@@ -4577,6 +4577,7 @@ var labelStyles = css`
     text-transform: var(--burgton-button-label-text-transform);
   }
   
+  .label,
   :host([active]) .label {
     color: var(--burgton-button-label-font-color-active);
   }
@@ -4698,6 +4699,7 @@ class BurgtonButton extends LitElement {
       labelPosition: { type: String },
       targetSelectors: { type: String },
       targetClasses: { type: String },
+      description: { type: String },
     };
   }
 
@@ -4709,6 +4711,8 @@ class BurgtonButton extends LitElement {
     this._state = value;
     // eslint-disable-next-line no-unused-expressions
     this._state ? this.setAttribute('active', '') : this.removeAttribute('active');
+    this.setAttribute('aria-pressed', this._state);
+    this._toggleTargetClasses();
     this._dispatchEvent('burgton-button-state-change');
   }
 
@@ -4740,8 +4744,9 @@ class BurgtonButton extends LitElement {
    */
   set labelPosition(value) {
     const acceptedPositions = ['top', 'bottom', 'right', 'left'];
-    if (value && !acceptedPositions.includes(value)) {
+    if ((value && !acceptedPositions.includes(value)) || value === '') {
       this._logError(`"${value}" is not a valid labelPosition value`);
+      this.setAttribute('labelPosition', 'bottom');
       this._labelPosition = 'bottom';
     } else {
       this._labelPosition = value;
@@ -4780,13 +4785,30 @@ class BurgtonButton extends LitElement {
     return this._targetClasses;
   }
 
+  /**
+   * Set the 'aria-label' attribute.
+   * This attribute is used by screen readers to 'describe' the element
+   */
+  set description(value) {
+    this._description = this.label ? this.label : value;
+    this.setAttribute('aria-label', this._description);
+  }
+
+  /**
+   * Get value of description property
+   */
+  get description() {
+    return this._description;
+  }
+
   constructor() {
     super();
 
     this.type = 'default';
     this.state = false;
     this.label = null;
-    this.labelPosition = null;
+    this.labelPosition = 'bottom';
+    this.description = 'Menu button';
     this.acceptedTypes = [
       'default',
       'arrow-left',
@@ -4804,13 +4826,14 @@ class BurgtonButton extends LitElement {
       'vertical-rotator',
       'zoom',
     ];
+
+    this.addA11yFeatures();
   }
 
   connectedCallback() {
     super.connectedCallback();
     this.addEventListener('click', this._handleClick);
-
-    this.addEventListener('click', this._toggleTargetClasses);
+    this.addEventListener('keydown', this._handleKeyPressed);
   }
 
   // eslint-disable-next-line no-unused-vars
@@ -4824,6 +4847,17 @@ class BurgtonButton extends LitElement {
   }
 
   /**
+   * To improve accessibility we need to add some attributes to the element
+   * so it is seen as a 'button' also by screen readers
+   */
+  addA11yFeatures() {
+    this.setAttribute('role', 'button');
+    this.setAttribute('aria-pressed', false);
+    this.tabIndex = 0;
+    this.setAttribute('aria-haspopup', 'menu');
+  }
+
+  /**
    * @private
    * Handle click on the burgton-button element
    *    1. toggle state
@@ -4831,6 +4865,19 @@ class BurgtonButton extends LitElement {
   _handleClick() {
     this.toggleState();
     this._dispatchEvent('burgton-button-click');
+  }
+
+  /**
+   * Handle key press when the burgton-button is focused
+   * This is a functionality of the native <button> element.
+   * @param event
+   * @private
+   */
+  _handleKeyPressed(event) {
+    if (event.key === ' ' || event.key === 'Enter' || event.key === 'Spacebar') {
+      event.preventDefault();
+      this._handleClick();
+    }
   }
 
   /**
@@ -4907,4 +4954,6 @@ class BurgtonButton extends LitElement {
 }
 
 customElements.define(BurgtonButton.is, BurgtonButton);
+
+export default BurgtonButton;
 //# sourceMappingURL=burgton-button-bundle.js.map
