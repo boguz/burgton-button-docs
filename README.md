@@ -10,4 +10,4 @@ You can see the [documentation page](https://boguz.github.io/burgton-button-docs
 
 # todo
 - [ ] update active menu item according to visible section
-- [ ] see if button would fit on this list: https://github.com/web-padawan/awesome-lit-html
+- Fix rollup build error because of focus-visible (options.context?)
