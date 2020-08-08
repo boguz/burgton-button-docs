@@ -24,7 +24,7 @@
   "homepage": "https://github.com/boguz/burgton-site#readme",
   "dependencies": {
     "burgton-button": "0.0.16",
-    "prismjs": "^1.20.0"
+    "prismjs": "^1.21.0"
   },
   "devDependencies": {
     "autoprefixer": "^9.7.6",
